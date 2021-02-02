@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>iOS Dev · GitBook</title>
+        <title>iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测) · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="TableViewHeaderViewAutoHeight.html" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="TableViewHeaderViewAutoHeight.html" />
     
 
     </head>
@@ -102,7 +100,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="ReadME.html">
+        <li class="chapter " data-level="1.2" data-path="ReadME.html">
             
                 <a href="ReadME.html">
             
@@ -129,7 +127,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="iOS14CellHierarchy.html">
+        <li class="chapter active" data-level="1.2.2" data-path="iOS14CellHierarchy.html">
             
                 <a href="iOS14CellHierarchy.html">
             
@@ -177,7 +175,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >iOS Dev</a>
+        <a href=".." >iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测)</a>
     </h1>
 </div>
 
@@ -192,7 +190,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>iOS&#x6CA1;&#x4EBA;&#x8981;&#x4E86;</p>
+                                <h1 id="ios14-cell&#x4E0D;&#x89C4;&#x8303;&#x6DFB;&#x52A0;&#x811A;&#x672C;&#x68C0;&#x6D4B;">iOS14 Cell&#x4E0D;&#x89C4;&#x8303;&#x6DFB;&#x52A0;&#x811A;&#x672C;&#x68C0;&#x6D4B;</h1>
+<p>&#x5728; iOS14 bate &#x4E2D;&#xFF0C;UITableViewCell &#x4E2D;&#x5982;&#x679C;&#x6709;&#x76F4;&#x63A5;&#x6DFB;&#x52A0;&#x5728; cell &#x4E0A;&#x7684;&#x63A7;&#x4EF6;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4F7F;&#x7528; <code>[self addSubview:]</code> &#x65B9;&#x5F0F;&#x6DFB;&#x52A0;&#x7684;&#x63A7;&#x4EF6;&#xFF0C;&#x4F1A;&#x663E;&#x793A;&#x5728; contentView &#x7684;&#x4E0B;&#x5C42;&#x3002;
+ contentView &#x4F1A;&#x963B;&#x6321;&#x4E8B;&#x4EF6;&#x4EA4;&#x4E92;&#xFF0C;&#x4F7F;&#x6240;&#x6709;&#x4E8B;&#x4EF6;&#x90FD;&#x54CD;&#x5E94; <code>tableView:didSelectRowAtIndexPath:</code> &#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C; customView &#x5B58;&#x5728;&#x4EA4;&#x4E92;&#x4E8B;&#x4EF6;&#x5C06;&#x65E0;&#x6CD5;&#x54CD;&#x5E94;&#x3002;&#x5982;&#x679C; contentView &#x8BBE;&#x7F6E;&#x4E86;&#x80CC;&#x666F;&#x8272;&#xFF0C;&#x8FD8;&#x4F1A;&#x5F71;&#x54CD;&#x754C;&#x9762;&#x663E;&#x793A;&#x3002;</p>
+<pre><code class="lang-shell">//&#x6CE8;: &#x9ED8;&#x8BA4;Cell&#x7684;&#x6587;&#x4EF6;&#x540D;&#x4EE5; xxxCell &#x505A;&#x547D;&#x540D;&#x505A;&#x89C4;&#x8303;
+//&#x5982;&#x679C;&#x9879;&#x76EE;&#x6709;&#x53E6;&#x5916;&#x7279;&#x6B8A;&#x547D;&#x540D;&#x89C4;&#x5219;&#x81EA;&#x884C;&#x4FEE;&#x6539;
+
+
+find (&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;) -name &quot;*Cell.m&quot; -print | xargs grep &quot;self addSubview&quot;
+</code></pre>
 
                                 
                                 </section>
@@ -220,14 +226,10 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="TableViewHeaderViewAutoHeight.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: TableHeaderView AutoLayout">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="TableViewHeaderViewAutoHeight.html" class="navigation navigation-next " aria-label="Next page: TableHeaderView AutoLayout">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -236,7 +238,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"iOS Dev","level":"1.2","depth":1,"next":{"title":"TableHeaderView AutoLayout","level":"1.2.1","depth":2,"path":"iOS/TableViewHeaderViewAutoHeight.md","ref":"./iOS/TableViewHeaderViewAutoHeight.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/ReadME.md","mtime":"2021-02-02T02:54:46.916Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-02T02:55:13.883Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测)","level":"1.2.2","depth":2,"previous":{"title":"TableHeaderView AutoLayout","level":"1.2.1","depth":2,"path":"iOS/TableViewHeaderViewAutoHeight.md","ref":"./iOS/TableViewHeaderViewAutoHeight.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/iOS14CellHierarchy.md","mtime":"2021-02-02T02:54:46.916Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-02T02:55:13.883Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
