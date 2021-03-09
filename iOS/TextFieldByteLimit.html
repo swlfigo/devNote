@@ -1,0 +1,357 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>TextView/TextField 输入限制 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="iOS14CellHierarchy.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="ReadME.html">
+            
+                <a href="ReadME.html">
+            
+                    
+                    iOS Dev
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="TableViewHeaderViewAutoHeight.html">
+            
+                <a href="TableViewHeaderViewAutoHeight.html">
+            
+                    
+                    TableHeaderView AutoLayout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="iOS14CellHierarchy.html">
+            
+                <a href="iOS14CellHierarchy.html">
+            
+                    
+                    iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="TextFieldByteLimit.html">
+            
+                <a href="TextFieldByteLimit.html">
+            
+                    
+                    TextView/TextField 输入限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >TextView/TextField 输入限制</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x53BB;&#x6389;&#x8F93;&#x5165;&#x952E;&#x76D8;&#x4E0A;&#x7684;&#x81EA;&#x52A8;&#x8054;&#x60F3;&#x90E8;&#x5206;&#xFF0C;&#x9650;&#x5236;&#x957F;&#x5EA6;&#x5185;&#x5BB9;&#xFF0C;&#x4EE5;&#x53CA;&#x7981;&#x6B62;&#x8F93;&#x5165;emoji&#x8868;&#x60C5;&#x7B49;&#x95EE;&#x9898;">&#x53BB;&#x6389;&#x8F93;&#x5165;&#x952E;&#x76D8;&#x4E0A;&#x7684;&#x81EA;&#x52A8;&#x8054;&#x60F3;&#x90E8;&#x5206;&#xFF0C;&#x9650;&#x5236;&#x957F;&#x5EA6;&#x5185;&#x5BB9;&#xFF0C;&#x4EE5;&#x53CA;&#x7981;&#x6B62;&#x8F93;&#x5165;emoji&#x8868;&#x60C5;&#x7B49;&#x95EE;&#x9898;</h2>
+<p>&#x5F53;&#x8F93;&#x5165;&#x7684;&#x4FE1;&#x606F;&#x53EA;&#x5141;&#x8BB8;&#x662F;&#x6570;&#x5B57;&#x6216;&#x8005;&#x5B57;&#x6BCD;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x81EA;&#x52A8;&#x8054;&#x60F3;&#x7684;&#x6587;&#x672C;&#x53EF;&#x4EE5;&#x4E0D;&#x70B9;&#x51FB;&#x8FDB;&#x53BB;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;&#x6587;&#x672C;&#x6709;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x89C1;&#x5F97;&#x662F;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x51FA;&#x73B0;&#x7684;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x76F4;&#x63A5;&#x53BB;&#x6389;&#x81EA;&#x52A8;&#x8054;&#x60F3;&#x529F;&#x80FD;&#x3002;&#x4EE3;&#x7801;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-objective-c">textField.autocorrectionType = UITextAutocorrectionTypeNo;
+
+textView.autocorrectionType = UITextAutocorrectionTypeNo;
+</code></pre>
+<p>2.1 &#x9650;&#x5B9A;&#x67D0;&#x4E9B;&#x7279;&#x5B9A;&#x7684;&#x8F93;&#x5165;&#x6587;&#x672C;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#xFF1A;</p>
+<pre><code class="lang-objective-c">define kAlphaNum @&quot;X0123456789&quot;
+
+NSCharacterSet *cs;
+
+cs = [[NSCharacterSetcharacterSetWithCharactersInString:kAlphaNum]invertedSet];
+
+NSString *filtered = [[stringcomponentsSeparatedByCharactersInSet:cs]componentsJoinedByString:@&quot;&quot;];//&#x6309;cs&#x5206;&#x79BB;&#x51FA;&#x6570;&#x7EC4;,&#x6570;&#x7EC4;&#x6309;@&quot;&quot;&#x5206;&#x79BB;&#x51FA;&#x5B57;&#x7B26;&#x4E32;
+
+BOOL canChange = [stringisEqualToString:filtered];
+
+return canChange;
+</code></pre>
+<p>2.2 &#x7531;&#x4E8E;&#x5728;&#x9650;&#x5236;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x7684;&#x65F6;&#x5019;&#x6709;&#x8BB8;&#x591A;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x6BD4;&#x5982;&#x8F93;&#x5165;&#x6C49;&#x5B57;&#xFF0C;&#x5F53;&#x5728;&#x62FC;&#x5199;&#x7684;&#x65F6;&#x5019;&#x5728;&#x90BB;&#x8FD1;&#x9650;&#x5236;&#x957F;&#x5EA6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x62FC;&#x97F3;&#x4E00;&#x65E6;&#x8D85;&#x8FC7;&#x957F;&#x5EA6;&#xFF0C;&#x5C31;&#x65E0;&#x6CD5;&#x7CBE;&#x786E;&#x5730;&#x5C06;&#x60F3;&#x8981;&#x7684;&#x6C49;&#x5B57;&#x8F93;&#x5165;&#x5230;&#x6700;&#x540E;&#x9650;&#x5236;&#x4F4D;&#xFF0C;&#x9488;&#x5BF9;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;&#x6CE8;&#xFF1A;textView&#x540C;&#x6837;&#x540C;&#x6837;&#x9002;&#x7528;&#x4E0E;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x8FC7;&#x5E76;&#x4E0D;&#x662F;&#x7ED9;textView&#x6DFB;&#x52A0;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x800C;&#x662F;&#x6DFB;&#x52A0;&#x76D1;&#x542C;&#xFF0C;&#x5373;NSUserDefault</p>
+<p>1.&#x7ED9;textField&#x6DFB;&#x52A0;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;</p>
+<pre><code class="lang-objective-c">[_hNewMsgTextField addTarget:self action:@selector(textChanged:)forControlEvents:UIControlEventEditingChanged];
+</code></pre>
+<p>2.&#x5B8C;&#x6210;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-objective-c">-(void)textChanged:(UITextField *)textField{
+
+    NSString *lang = [[UITextInputMode currentInputMode]primaryLanguage];//&#x952E;&#x76D8;&#x8F93;&#x5165;&#x6A21;&#x5F0F;
+
+    if ([lang isEqualToString:@&quot;zh-Hans&quot;]) {// &#x7B80;&#x4F53;&#x4E2D;&#x6587;&#x8F93;&#x5165;&#xFF0C;&#x5305;&#x62EC;&#x7B80;&#x4F53;&#x62FC;&#x97F3;&#xFF0C;&#x5065;&#x4F53;&#x4E94;&#x7B14;&#xFF0C;&#x7B80;&#x4F53;&#x624B;&#x5199;
+
+        UITextRange *selectedRange = [textField markedTextRange];
+
+        //&#x83B7;&#x53D6;&#x9AD8;&#x4EAE;&#x90E8;&#x5206;
+
+        UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];
+
+        //&#x6CA1;&#x6709;&#x9AD8;&#x4EAE;&#x9009;&#x62E9;&#x7684;&#x5B57;&#xFF0C;&#x5219;&#x5BF9;&#x5DF2;&#x8F93;&#x5165;&#x7684;&#x6587;&#x5B57;&#x8FDB;&#x884C;&#x5B57;&#x6570;&#x7EDF;&#x8BA1;&#x548C;&#x9650;&#x5236;
+
+        if (!position) {
+
+            if (textField.text.length &gt;11) {
+
+                textField.text = [textField.text substringToIndex:11];
+
+            }
+
+        }
+
+        //&#x6709;&#x9AD8;&#x4EAE;&#x9009;&#x62E9;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5219;&#x6682;&#x4E0D;&#x5BF9;&#x6587;&#x5B57;&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;&#x548C;&#x9650;&#x5236;
+
+        else{
+
+        }
+
+    }
+
+    // &#x4E2D;&#x6587;&#x8F93;&#x5165;&#x6CD5;&#x4EE5;&#x5916;&#x7684;&#x76F4;&#x63A5;&#x5BF9;&#x5176;&#x7EDF;&#x8BA1;&#x9650;&#x5236;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x8003;&#x8651;&#x5176;&#x4ED6;&#x8BED;&#x79CD;&#x60C5;&#x51B5;
+
+    else{
+
+        if (textField.text.length &gt;11) {
+
+            textField.text = [textField.text substringToIndex:11];
+
+        }
+
+    }
+
+}
+</code></pre>
+<p>&#x200B;                        </p>
+<p>3.&#x7981;&#x6B62;&#x8F93;&#x5165;&#x82F9;&#x679C;&#x952E;&#x76D8;&#x81EA;&#x5E26;&#x7684;emoji&#x8868;&#x60C5;</p>
+<pre><code class="lang-objective-c">if ([[[UITextInputMode currentInputMode]primaryLanguage] isEqualToString:@&quot;emoji&quot;]) {
+        return NO;        
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="iOS14CellHierarchy.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"TextView/TextField 输入限制","level":"1.2.3","depth":2,"previous":{"title":"iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测)","level":"1.2.2","depth":2,"path":"iOS/iOS14CellHierarchy.md","ref":"./iOS/iOS14CellHierarchy.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/TextFieldByteLimit.md","mtime":"2021-03-09T02:52:04.777Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-09T02:52:43.375Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
