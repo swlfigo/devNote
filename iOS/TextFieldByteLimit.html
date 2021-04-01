@@ -244,9 +244,10 @@ return canChange;
         if (!position) {
 
             if (textField.text.length &gt;11) {
-
-                textField.text = [textField.text substringToIndex:11];
-
+                //&#x4E0D;&#x80FD;&#x7B80;&#x5355;&#x7528; substringToIndex &#x6765;&#x88C1;&#x526A;&#xFF0C;&#x5982;&#x679C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B57;&#x662F; Emoji&#xFF0C;&#x88C1;&#x526A;&#x53EF;&#x80FD;&#x4F1A;&#x4E71;&#x7801;
+                //textField.text = [textField.text substringToIndex:11];
+                NSRange rangeIndex = [textView.text rangeOfComposedCharacterSequenceAtIndex:11];
+                    textView.text = [textView.text substringToIndex:rangeIndex.location];
             }
 
         }
@@ -264,9 +265,10 @@ return canChange;
     else{
 
         if (textField.text.length &gt;11) {
-
-            textField.text = [textField.text substringToIndex:11];
-
+            //&#x540C;&#x4E0A;
+            //textField.text = [textField.text substringToIndex:11];
+            NSRange rangeIndex = [textView.text rangeOfComposedCharacterSequenceAtIndex:11];
+            textView.text = [textView.text substringToIndex:rangeIndex.location];
         }
 
     }
@@ -279,6 +281,8 @@ return canChange;
         return NO;        
 }
 </code></pre>
+<p>&#x53E6;&#x5916; &#xFF0C;<strong>OC</strong> &#x3001;<strong>Swift</strong> &#x5224;&#x65AD;&#x5B57;&#x7B26;(&#x5B57;&#x8282;)&#x957F;&#x5EA6;&#x4E0D;&#x4E00;&#x6837;</p>
+<p><img src="http://sylarimage.oss-cn-shenzhen.aliyuncs.com/2021-04-01-063549.png" alt=""></p>
 
                                 
                                 </section>
@@ -318,7 +322,7 @@ return canChange;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TextView/TextField 输入限制","level":"1.2.3","depth":2,"previous":{"title":"iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测)","level":"1.2.2","depth":2,"path":"iOS/iOS14CellHierarchy.md","ref":"./iOS/iOS14CellHierarchy.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/TextFieldByteLimit.md","mtime":"2021-03-09T02:52:04.777Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-09T02:52:43.375Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TextView/TextField 输入限制","level":"1.2.3","depth":2,"previous":{"title":"iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测)","level":"1.2.2","depth":2,"path":"iOS/iOS14CellHierarchy.md","ref":"./iOS/iOS14CellHierarchy.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/TextFieldByteLimit.md","mtime":"2021-04-01T06:37:33.461Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-01T06:38:04.116Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
