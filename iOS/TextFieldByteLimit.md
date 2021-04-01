@@ -62,9 +62,10 @@ return canChange;
         if (!position) {
             
             if (textField.text.length >11) {
-                
-                textField.text = [textField.text substringToIndex:11];
-                
+                //不能简单用 substringToIndex 来裁剪，如果最后一个字是 Emoji，裁剪可能会乱码
+                //textField.text = [textField.text substringToIndex:11];
+                NSRange rangeIndex = [textView.text rangeOfComposedCharacterSequenceAtIndex:11];
+            		textView.text = [textView.text substringToIndex:rangeIndex.location];
             }
             
         }
@@ -82,9 +83,10 @@ return canChange;
     else{
         
         if (textField.text.length >11) {
-            
-            textField.text = [textField.text substringToIndex:11];
-            
+            //同上
+            //textField.text = [textField.text substringToIndex:11];
+            NSRange rangeIndex = [textView.text rangeOfComposedCharacterSequenceAtIndex:11];
+            textView.text = [textView.text substringToIndex:rangeIndex.location];
         }
         
     }
@@ -107,3 +109,14 @@ if ([[[UITextInputMode currentInputMode]primaryLanguage] isEqualToString:@"emoji
         return NO;        
 }
 ```
+
+
+
+
+
+
+
+另外 ，**OC** 、**Swift** 判断字符(字节)长度不一样
+
+![](http://sylarimage.oss-cn-shenzhen.aliyuncs.com/2021-04-01-063549.png)
+
