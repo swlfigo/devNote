@@ -217,27 +217,6 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="cocoapod-lib-lint--push-problem">Cocoapod Lib Lint &amp; Push Problem</h1>
-<p>Cocoapod Lint &#x4E0E; Push&#x65F6;&#x5019;&#x9047;&#x5230;&#x95EE;&#x9898;&#x5982;&#x4E0B;</p>
-<pre><code class="lang-shell">Encountered an unknown error (Could not find a `ios` simulator (valid values: ). Ensure that Xcode -&gt; Window -&gt; Devices has at least one `ios` simulator listed or otherwise add one.) during validation.
-</code></pre>
-<p>Cocoapod &#x7248;&#x672C; &#xFF08;1.10.1&#xFF09;</p>
-<p>&#x5378;&#x8F7D; Cocoapod &#x964D;&#x7EA7; </p>
-<p>&#x9996;&#x5148;&#xFF0C;&#x901A;&#x8FC7;&#x5728;&#x7EC8;&#x7AEF;&#x4E2D;&#x8FD0;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x6765;&#x786E;&#x5B9A;&#x5DF2;&#x5B89;&#x88C5;&#x7684;Cocoapods&#x7248;&#x672C;&#xFF1A;</p>
-<pre><code class="lang-shell">gem list --local | grep cocoapods
-</code></pre>
-<p>&#x60A8;&#x5C06;&#x770B;&#x5230;&#x7C7B;&#x4F3C;&#x4EE5;&#x4E0B;&#x7684;&#x8F93;&#x51FA;&#xFF1A;</p>
-<pre><code>cocoapods (0.27.1, 0.20.2)
-cocoapods-core (0.27.1, 0.20.2)
-cocoapods-downloader (0.2.0, 0.1.2)
-</code></pre><p>&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x5B89;&#x88C5;&#x4E86;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#x7684;Cocoapods&#x3002;</p>
-<p>&#x8981;&#x5B8C;&#x5168;&#x5220;&#x9664;&#xFF0C;&#x8BF7;&#x53D1;&#x51FA;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p>
-<pre><code class="lang-shell">gem uninstall cocoapods
-gem uninstall cocoapods-core
-gem uninstall cocoapods-downloader
-</code></pre>
-<p>&#x5B89;&#x88C5;&#x7279;&#x5B9A;&#x7248;&#x672C;</p>
-<pre><code class="lang-bash">sudo gem install -n /usr/<span class="hljs-built_in">local</span>/bin  cocoapods -v 1.9.1
-</code></pre>
 
                                 
                                 </section>
@@ -277,7 +256,7 @@ gem uninstall cocoapods-downloader
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Cocoapod Lib Lint & Push Problem","level":"1.2.4","depth":2,"previous":{"title":"TextView/TextField 输入限制","level":"1.2.3","depth":2,"path":"iOS/TextFieldByteLimit.md","ref":"iOS/TextFieldByteLimit.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/CocoapodLibLint.md","mtime":"2021-04-06T10:42:46.500Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-06T10:43:20.993Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Cocoapod Lib Lint & Push Problem","level":"1.2.4","depth":2,"previous":{"title":"TextView/TextField 输入限制","level":"1.2.3","depth":2,"path":"iOS/TextFieldByteLimit.md","ref":"iOS/TextFieldByteLimit.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/CocoapodLibLint.md","mtime":"2021-07-02T07:16:28.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-02T07:16:30.974Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
