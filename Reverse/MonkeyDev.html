@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>卸载 Cocoapods · GitBook</title>
+        <title>MonkeyDev · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -58,8 +58,6 @@
 
     
     
-    <link rel="prev" href="TextFieldByteLimit.html" />
-    
 
     </head>
     <body>
@@ -100,9 +98,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="ReadME.html">
+        <li class="chapter " data-level="1.2" data-path="../iOS/ReadME.html">
             
-                <a href="ReadME.html">
+                <a href="../iOS/ReadME.html">
             
                     
                     iOS Dev
@@ -114,9 +112,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="TableViewHeaderViewAutoHeight.html">
+        <li class="chapter " data-level="1.2.1" data-path="../iOS/TableViewHeaderViewAutoHeight.html">
             
-                <a href="TableViewHeaderViewAutoHeight.html">
+                <a href="../iOS/TableViewHeaderViewAutoHeight.html">
             
                     
                     TableHeaderView AutoLayout
@@ -127,9 +125,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="iOS14CellHierarchy.html">
+        <li class="chapter " data-level="1.2.2" data-path="../iOS/iOS14CellHierarchy.html">
             
-                <a href="iOS14CellHierarchy.html">
+                <a href="../iOS/iOS14CellHierarchy.html">
             
                     
                     iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测)
@@ -140,9 +138,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="TextFieldByteLimit.html">
+        <li class="chapter " data-level="1.2.3" data-path="../iOS/TextFieldByteLimit.html">
             
-                <a href="TextFieldByteLimit.html">
+                <a href="../iOS/TextFieldByteLimit.html">
             
                     
                     TextView/TextField 输入限制
@@ -153,9 +151,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.4" data-path="UninstallCocoapods.html">
+        <li class="chapter " data-level="1.2.4" data-path="../iOS/UninstallCocoapods.html">
             
-                <a href="UninstallCocoapods.html">
+                <a href="../iOS/UninstallCocoapods.html">
             
                     
                     卸载 Cocoapods
@@ -185,9 +183,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../Reverse/MonkeyDev.html">
+        <li class="chapter active" data-level="1.3.1" data-path="MonkeyDev.html">
             
-                <a href="../Reverse/MonkeyDev.html">
+                <a href="MonkeyDev.html">
             
                     
                     MonkeyDev
@@ -233,7 +231,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >卸载 Cocoapods</a>
+        <a href=".." >MonkeyDev</a>
     </h1>
 </div>
 
@@ -248,20 +246,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5378;&#x8F7D;-cocoapods">&#x5378;&#x8F7D; Cocoapods</h1>
-<pre><code class="lang-shell">#!/bin/zsh
-cd `dirname $0`
-
-echo &quot;&#x5148;&#x5378;&#x8F7D;&#x76EE;&#x524D;&#x6240;&#x6709;cocoapods&#x76F8;&#x5173;&quot;
-
-#&#x7531;&#x4E8E;&#x4E0A;&#x6B21;&#x5B89;&#x88C5;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x6743;&#x9650;&#xFF0C;&#x6240;&#x4EE5;&#x591A;&#x5378;&#x8F7D;&#x4E00;&#x4E0B;&#xFF0C;fml
-gem list  cocoapods xcodeproj | grep -E &apos;cocoapods&apos; | awk &apos;{print $1}&apos; | xargs -I {} sudo gem uninstall {} -q -a --force
-gem list  cocoapods xcodeproj | grep -E &apos;cocoapods&apos; | awk &apos;{print $1}&apos; | xargs -I {} gem uninstall {} -q -a --force
-
-
-sudo gem uninstall xcodeproj -q -a --force
-gem uninstall xcodeproj -q -a --force
-</code></pre>
+                                <h1 id="monkeydev-&#x5F00;&#x53D1;&#x95EE;&#x9898;">MonkeyDev &#x5F00;&#x53D1;&#x95EE;&#x9898;</h1>
+<h4 id="1-monkeydev-&#x62A5;&#x9519;an-empty-identity-&#x5904;&#x7406;&#x65B9;&#x5F0F;">1. MonkeyDev &#x62A5;&#x9519;An empty identity ...&#x5904;&#x7406;&#x65B9;&#x5F0F;</h4>
+<p>Xcode10.3&#x7528;MonkeyDev &#x521B;&#x5EFA;LogosTweak&#x9879;&#x76EE;&#x63D0;&#x793A;&#x9519;&#x8BEF;&#x89E3;&#x51B3;&#x529E;&#x6CD5;
+&#x9519;&#x8BEF;&#xFF1A;<strong>An empty identity is not valid when signing a binary for the product type &#x2018;Dynamic Library&#x2019;</strong></p>
+<p>&#x5728;&#x8BE5;&#x9879;&#x76EE;&#x7684;<code>TARGETS</code>&#x7684;<code>Build settings</code>&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x53C2;&#x6570;, &#x70B9;&#x51FB;<code>Add User-Defined Setting</code>, &#x6DFB;&#x52A0;<code>CODE_SIGNING_ALLOWED=NO</code>, &#x91CD;&#x65B0;&#x7F16;&#x8BD1;, &#x95EE;&#x9898;&#x89E3;&#x51B3;.</p>
+<p><img src="http://sylarimage.oss-cn-shenzhen.aliyuncs.com/uPic/webp-20220101100344824.jpg" alt="img"></p>
+<p><img src="http://sylarimage.oss-cn-shenzhen.aliyuncs.com/uPic/webp-20220101100353604.jpg" alt="img"></p>
+<h4 id="2-ld-building-for-ios-but-linking-in-tbd-file-opttheosvendorlibcydiasubstrateframeworkcydiasubstratetbd-built-for-ios-simulator-file-opttheosvendorlibcydiasubstrateframeworkcydiasubstratetbd-for-architecture-arm64-clang-error-linker-command-failed-with-exit-code-1-use--v-to-see-invocation">2. ld: building for iOS, but linking in .tbd file (/opt/theos/vendor/lib/CydiaSubstrate.framework/CydiaSubstrate.tbd) built for iOS Simulator, file &#x2018;/opt/theos/vendor/lib/CydiaSubstrate.framework/CydiaSubstrate.tbd&#x2019; for architecture arm64 clang: error: linker command failed with exit code 1 (use -v to see invocation)</h4>
+<p>&#x5C06;  /opt/theos/vendor/lib/CydiaSubstrate.framework &#x4E0B; CydiaSubstrate.tbd &#x6587;&#x672C;&#x6253;&#x5F00;&#xFF0C;&#x5220;&#x9664;archs&#x540E;&#x9762;&#x7684;&#x4E24;&#x9879;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x6210;&#x529F;&#x4E86;&#x3002;</p>
 
                                 
                                 </section>
@@ -289,10 +282,6 @@ gem uninstall xcodeproj -q -a --force
 
             
                 
-                <a href="TextFieldByteLimit.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: TextView/TextField 输入限制">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
                 
             
         
@@ -301,7 +290,7 @@ gem uninstall xcodeproj -q -a --force
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"卸载 Cocoapods","level":"1.2.4","depth":2,"next":{"title":"Reverse","level":"1.3","depth":1,"ref":"","articles":[{"title":"MonkeyDev","level":"1.3.1","depth":2,"path":"Reverse/MonkeyDev.md","ref":"Reverse/MonkeyDev.md","articles":[]}]},"previous":{"title":"TextView/TextField 输入限制","level":"1.2.3","depth":2,"path":"iOS/TextFieldByteLimit.md","ref":"iOS/TextFieldByteLimit.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/UninstallCocoapods.md","mtime":"2022-01-01T04:11:50.505Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-01T04:12:30.794Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MonkeyDev","level":"1.3.1","depth":2,"previous":{"title":"Reverse","level":"1.3","depth":1,"ref":"","articles":[{"title":"MonkeyDev","level":"1.3.1","depth":2,"path":"Reverse/MonkeyDev.md","ref":"Reverse/MonkeyDev.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Reverse/MonkeyDev.md","mtime":"2022-01-01T04:11:50.505Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-01T04:12:30.794Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
