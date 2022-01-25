@@ -9,5 +9,6 @@
   - [卸载 Cocoapods](iOS/UninstallCocoapods.md)
 - Reverse
   - [MonkeyDev](Reverse/MonkeyDev.md)
+  - [Checkra1n 越狱后插件不加载的一个解决办法](Reverse/TweakFail.md)
   
 
