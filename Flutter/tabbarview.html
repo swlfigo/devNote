@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Checkra1n 越狱后插件不加载的一个解决办法 · GitBook</title>
+        <title>Flutter自定义动态长度TabBar样式后与TabBarView联动过慢解决 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -58,7 +58,7 @@
 
     
     
-    <link rel="prev" href="MonkeyDev.html" />
+    <link rel="prev" href="storageState.html" />
     
 
     </head>
@@ -171,9 +171,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../Flutter/ReadMe.html">
+        <li class="chapter " data-level="1.3" data-path="ReadMe.html">
             
-                <a href="../Flutter/ReadMe.html">
+                <a href="ReadMe.html">
             
                     
                     Flutter Dev
@@ -185,9 +185,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../Flutter/storageState.html">
+        <li class="chapter " data-level="1.3.1" data-path="storageState.html">
             
-                <a href="../Flutter/storageState.html">
+                <a href="storageState.html">
             
                     
                     Flutter PageView/TabBarView等控件保存状态的问题解决方案
@@ -198,9 +198,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../Flutter/tabbarview.html">
+        <li class="chapter active" data-level="1.3.2" data-path="tabbarview.html">
             
-                <a href="../Flutter/tabbarview.html">
+                <a href="tabbarview.html">
             
                     
                     Flutter自定义动态长度TabBar样式后与TabBarView联动过慢解决
@@ -237,9 +237,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.1" data-path="MonkeyDev.html">
+        <li class="chapter " data-level="2.1.1" data-path="../Reverse/MonkeyDev.html">
             
-                <a href="MonkeyDev.html">
+                <a href="../Reverse/MonkeyDev.html">
             
                     
                     MonkeyDev
@@ -250,9 +250,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.1.2" data-path="TweakFail.html">
+        <li class="chapter " data-level="2.1.2" data-path="../Reverse/TweakFail.html">
             
-                <a href="TweakFail.html">
+                <a href="../Reverse/TweakFail.html">
             
                     
                     Checkra1n 越狱后插件不加载的一个解决办法
@@ -298,7 +298,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Checkra1n 越狱后插件不加载的一个解决办法</a>
+        <a href=".." >Flutter自定义动态长度TabBar样式后与TabBarView联动过慢解决</a>
     </h1>
 </div>
 
@@ -313,8 +313,107 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="checkra1n-&#x8D8A;&#x72F1;&#x540E;&#x63D2;&#x4EF6;&#x4E0D;&#x52A0;&#x8F7D;&#x7684;&#x4E00;&#x4E2A;&#x89E3;&#x51B3;&#x529E;&#x6CD5;">Checkra1n &#x8D8A;&#x72F1;&#x540E;&#x63D2;&#x4EF6;&#x4E0D;&#x52A0;&#x8F7D;&#x7684;&#x4E00;&#x4E2A;&#x89E3;&#x51B3;&#x529E;&#x6CD5;</h1>
-<p>&#x5728;Cydia  &#x641C;&#x7D22;&#x5B89;&#x88C5;cydia substrate</p>
+                                <h1 id="flutter&#x81EA;&#x5B9A;&#x4E49;&#x52A8;&#x6001;&#x957F;&#x5EA6;tabbar&#x6837;&#x5F0F;&#x540E;&#x4E0E;tabbarview&#x8054;&#x52A8;&#x8FC7;&#x6162;&#x89E3;&#x51B3;">Flutter&#x81EA;&#x5B9A;&#x4E49;&#x52A8;&#x6001;&#x957F;&#x5EA6;TabBar&#x6837;&#x5F0F;&#x540E;&#x4E0E;TabBarView&#x8054;&#x52A8;&#x8FC7;&#x6162;&#x89E3;&#x51B3;</h1>
+<p>&#x5982;&#x56FE;&#x4E2D; TabBarView &#x6ED1;&#x52A8;&#x540E; TabBar &#x8054;&#x52A8;&#x6EDE;&#x540E;</p>
+<p><img src="https://sylarimage.oss-cn-shenzhen.aliyuncs.com/uPic/737db6c9823b1e175cadda3a4d3a7c62.gif" alt="img" style="zoom:50%;"></p>
+<p>&#x4FEE;&#x6539;&#x524D;&#x6E90;&#x7801;</p>
+<pre><code>  _controller = TabController(
+        length: titleTabs.length,
+        vsync: _tickerProvider,
+        initialIndex: currentIndex)
+      ..addListener(() {
+        //TODO &#x76D1;&#x542C;&#x6ED1;&#x52A8;/&#x70B9;&#x9009;&#x4F4D;&#x7F6E;
+
+      });
+
+
+  _buildBody(BuildContext context) {
+    return MediaQuery.removePadding(
+        context: context,
+        removeTop: true,
+        child: Builder(builder: (_) {
+          return Container(
+              color: appWhite,
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildTop(),
+                    _buildTabBar(), // TabBar
+                    Expanded(child: _buildDataList()),
+                  ]));
+        }));
+  }
+
+  _buildTabBar() {
+    return Consumer&lt;RegularListModel&gt;(builder: (_, model, __) {
+      List&lt;String&gt; dataList = model.titleTabs; //&#x52A8;&#x6001;Tab&#xFF0C;&#x540E;&#x53F0;&#x53D6;&#x503C;
+      if (model.isBusy || model.isError) {
+        return Container();
+      }
+      return Container(
+        color: appWhite,
+        padding: EdgeInsets.fromLTRB(0, 16, 16, 0),
+        child: TabBar(
+          labelPadding: EdgeInsets.fromLTRB(14, 0, 0, 0),
+          tabs: List.generate(
+              dataList.length,
+              (index) =&gt; Tab( //&#x81EA;&#x5B9A;&#x4E49;TabBar
+                    child: Container(
+                      height: 22,
+                      width: 42,
+                      padding: EdgeInsets.only(
+                          bottom: (Platform.isAndroid &amp;&amp; index == 0) ? 1.5 : 0),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                          color: index == model.currentIndex
+                              ? colorFF4180FF
+                              : colorFF5F8FF),
+                      child: Text(
+                        dataList[index],
+                        style: TextStyle(
+                            color: index == model.currentIndex
+                                ? Colors.white
+                                : colorFF4180FF,
+                            fontSize: 12.0),
+                      ),
+                    ),
+                  )),
+          isScrollable: true,
+          controller: model.controller,
+          indicator: const BoxDecoration(),
+        ),
+      );
+    });
+  }
+
+  _buildDataList() {
+    return Consumer&lt;RegularListModel&gt;(builder: (_, model, __) {
+        return TabBarView(
+          controller: model.controller,
+          children: model.titleTabs.map((item) {
+            return RegularListRecordPage(symbol: item);
+          }).toList());
+    });
+  }
+</code></pre><p><strong>&#x4FEE;&#x6539;&#x65B9;&#x6CD5; PageView &#x53D6;&#x4EE3; TabBarView &#x89E3;&#x51B3;</strong></p>
+<pre><code>  final PageController _pageController = PageController(initialPage: 0);
+
+  _buildDataList() {
+    return Consumer&lt;RegularListModel&gt;(builder: (_, model, __) {
+      return PageView.builder(
+          itemCount: model.titleTabs.length,
+          onPageChanged: (index) {
+            model.controller.animateTo(index);
+          },
+          controller: _pageController,
+          itemBuilder: (_, int index) =&gt;
+              RegularListRecordPage(symbol: model.titleTabs[index]));
+    });
+  }
+</code></pre><p>&#x8FD0;&#x884C;&#x5982;&#x4E0B;</p>
+<p><img src="https://sylarimage.oss-cn-shenzhen.aliyuncs.com/uPic/1d0a7722b422e398ec79a975ecdbd35b.gif" alt="img" style="zoom:50%;"></p>
 
                                 
                                 </section>
@@ -342,7 +441,7 @@
 
             
                 
-                <a href="MonkeyDev.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: MonkeyDev">
+                <a href="storageState.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Flutter PageView/TabBarView等控件保存状态的问题解决方案">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -354,7 +453,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Checkra1n 越狱后插件不加载的一个解决办法","level":"2.1.2","depth":2,"previous":{"title":"MonkeyDev","level":"2.1.1","depth":2,"path":"Reverse/MonkeyDev.md","ref":"Reverse/MonkeyDev.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Reverse/TweakFail.md","mtime":"2024-10-19T04:02:39.776Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-10-19T04:03:05.723Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Flutter自定义动态长度TabBar样式后与TabBarView联动过慢解决","level":"1.3.2","depth":2,"next":{"title":"Reverse","level":"2.1","depth":1,"ref":"","articles":[{"title":"MonkeyDev","level":"2.1.1","depth":2,"path":"Reverse/MonkeyDev.md","ref":"Reverse/MonkeyDev.md","articles":[]},{"title":"Checkra1n 越狱后插件不加载的一个解决办法","level":"2.1.2","depth":2,"path":"Reverse/TweakFail.md","ref":"Reverse/TweakFail.md","articles":[]}]},"previous":{"title":"Flutter PageView/TabBarView等控件保存状态的问题解决方案","level":"1.3.1","depth":2,"path":"Flutter/storageState.md","ref":"./Flutter/storageState.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Flutter/tabbarview.md","mtime":"2024-10-19T04:02:39.776Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-10-19T04:03:05.723Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
