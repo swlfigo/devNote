@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>MonkeyDev · GitBook</title>
+        <title>Nginx部署思源笔记Docker · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -56,8 +56,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
-    
-    <link rel="next" href="TweakFail.html" />
     
     
 
@@ -237,9 +235,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.1.1" data-path="MonkeyDev.html">
+        <li class="chapter " data-level="2.1.1" data-path="../Reverse/MonkeyDev.html">
             
-                <a href="MonkeyDev.html">
+                <a href="../Reverse/MonkeyDev.html">
             
                     
                     MonkeyDev
@@ -250,9 +248,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.2" data-path="TweakFail.html">
+        <li class="chapter " data-level="2.1.2" data-path="../Reverse/TweakFail.html">
             
-                <a href="TweakFail.html">
+                <a href="../Reverse/TweakFail.html">
             
                     
                     Checkra1n 越狱后插件不加载的一个解决办法
@@ -289,9 +287,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.1.1" data-path="../Devops/nginxsiyuan.html">
+        <li class="chapter active" data-level="3.1.1" data-path="nginxsiyuan.html">
             
-                <a href="../Devops/nginxsiyuan.html">
+                <a href="nginxsiyuan.html">
             
                     
                     Nginx部署思源笔记Docker
@@ -337,7 +335,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >MonkeyDev</a>
+        <a href=".." >Nginx部署思源笔记Docker</a>
     </h1>
 </div>
 
@@ -352,15 +350,85 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="monkeydev-&#x5F00;&#x53D1;&#x95EE;&#x9898;">MonkeyDev &#x5F00;&#x53D1;&#x95EE;&#x9898;</h1>
-<h4 id="1-monkeydev-&#x62A5;&#x9519;an-empty-identity-&#x5904;&#x7406;&#x65B9;&#x5F0F;">1. MonkeyDev &#x62A5;&#x9519;An empty identity ...&#x5904;&#x7406;&#x65B9;&#x5F0F;</h4>
-<p>Xcode10.3&#x7528;MonkeyDev &#x521B;&#x5EFA;LogosTweak&#x9879;&#x76EE;&#x63D0;&#x793A;&#x9519;&#x8BEF;&#x89E3;&#x51B3;&#x529E;&#x6CD5;
-&#x9519;&#x8BEF;&#xFF1A;<strong>An empty identity is not valid when signing a binary for the product type &#x2018;Dynamic Library&#x2019;</strong></p>
-<p>&#x5728;&#x8BE5;&#x9879;&#x76EE;&#x7684;<code>TARGETS</code>&#x7684;<code>Build settings</code>&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x53C2;&#x6570;, &#x70B9;&#x51FB;<code>Add User-Defined Setting</code>, &#x6DFB;&#x52A0;<code>CODE_SIGNING_ALLOWED=NO</code>, &#x91CD;&#x65B0;&#x7F16;&#x8BD1;, &#x95EE;&#x9898;&#x89E3;&#x51B3;.</p>
-<p><img src="http://sylarimage.oss-cn-shenzhen.aliyuncs.com/uPic/webp-20220101100344824.jpg" alt="img"></p>
-<p><img src="http://sylarimage.oss-cn-shenzhen.aliyuncs.com/uPic/webp-20220101100353604.jpg" alt="img"></p>
-<h4 id="2-ld-building-for-ios-but-linking-in-tbd-file-opttheosvendorlibcydiasubstrateframeworkcydiasubstratetbd-built-for-ios-simulator-file-opttheosvendorlibcydiasubstrateframeworkcydiasubstratetbd-for-architecture-arm64-clang-error-linker-command-failed-with-exit-code-1-use--v-to-see-invocation">2. ld: building for iOS, but linking in .tbd file (/opt/theos/vendor/lib/CydiaSubstrate.framework/CydiaSubstrate.tbd) built for iOS Simulator, file &#x2018;/opt/theos/vendor/lib/CydiaSubstrate.framework/CydiaSubstrate.tbd&#x2019; for architecture arm64 clang: error: linker command failed with exit code 1 (use -v to see invocation)</h4>
-<p>&#x5C06;  /opt/theos/vendor/lib/CydiaSubstrate.framework &#x4E0B; CydiaSubstrate.tbd &#x6587;&#x672C;&#x6253;&#x5F00;&#xFF0C;&#x5220;&#x9664;archs&#x540E;&#x9762;&#x7684;&#x4E24;&#x9879;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x6210;&#x529F;&#x4E86;&#x3002;</p>
+                                <h1 id="&#x601D;&#x6E90;&#x7B14;&#x8BB0;-docker&#x90E8;&#x7F72;">&#x601D;&#x6E90;&#x7B14;&#x8BB0; Docker&#x90E8;&#x7F72;</h1>
+<p><a href="https://github.com/siyuan-note/siyuan/blob/master/README_zh_CN.md#docker-%E9%83%A8%E7%BD%B2" target="_blank">&#x5B98;&#x65B9;&#x90E8;&#x7F72;&#x6587;&#x6863;</a></p>
+<p>&#x81EA;&#x7528;Docker-Compose</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&quot;3.9&quot;</span>
+<span class="hljs-attr">services:</span>
+<span class="hljs-attr">  main:</span>
+<span class="hljs-attr">    container_name:</span> siyuan
+<span class="hljs-attr">    image:</span> b3log/siyuan
+<span class="hljs-attr">    command:</span> [<span class="hljs-string">&apos;--workspace=/siyuan/workspace/&apos;</span>, <span class="hljs-string">&apos;--accessAuthCode=CHANGE_YOUR_AUTH_CODE&apos;</span>]
+<span class="hljs-attr">    ports:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-number">6806</span>:<span class="hljs-number">6806</span>
+<span class="hljs-attr">    volumes:</span>
+<span class="hljs-bullet">      -</span> /path/for/local/dir/siyuan/workspace:/siyuan/workspace
+<span class="hljs-attr">    restart:</span> unless-stopped
+<span class="hljs-attr">    environment:</span>
+      <span class="hljs-comment"># A list of time zone identifiers can be found at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</span>
+<span class="hljs-bullet">      -</span> TZ=CN
+</code></pre>
+<p>Nginx &#x90E8;&#x7F72;</p>
+<p>Nginx &#x4EE3;&#x7406;&#x601D;&#x6E90;&#x7B14;&#x8BB0;&#x670D;&#x52A1;&#xFF0C;&#x6CE8;&#x610F;&#x9700;&#x8981;&#x6DFB;&#x52A0; <code>location /ws { ... }</code> &#x914D;&#x7F6E;&#x4EE5;&#x4F7F;&#x7528; WebSocket</p>
+<pre><code class="lang-nginx"> <span class="hljs-section">server</span> {
+        <span class="hljs-attribute">listen</span> <span class="hljs-number">80</span>;
+        <span class="hljs-attribute">server_name</span>  a.b.c;
+        <span class="hljs-attribute">client_max_body_size</span> <span class="hljs-number">10m</span>;
+        <span class="hljs-attribute">location</span> / {
+            <span class="hljs-attribute">proxy_pass</span> http://siyuan;
+            <span class="hljs-attribute">proxy_set_header</span> HOST <span class="hljs-variable">$host</span>;
+            <span class="hljs-attribute">proxy_set_header</span> X-Forwarded-Proto <span class="hljs-variable">$scheme</span>;
+            <span class="hljs-attribute">proxy_set_header</span> X-Real-IP <span class="hljs-variable">$remote_addr</span>;
+            <span class="hljs-attribute">proxy_set_header</span> X-Forwarded-For <span class="hljs-variable">$proxy_add_x_forwarded_for</span>;
+        }
+        <span class="hljs-attribute">location</span> /ws {
+            <span class="hljs-attribute">proxy_pass</span> http://siyuan;
+            <span class="hljs-attribute">proxy_read_timeout</span> <span class="hljs-number">60s</span>;
+            <span class="hljs-attribute">proxy_http_version</span> <span class="hljs-number">1</span>.<span class="hljs-number">1</span>;
+            <span class="hljs-attribute">proxy_set_header</span> Upgrade <span class="hljs-variable">$http_upgrade</span>;
+            <span class="hljs-attribute">proxy_set_header</span> Connection <span class="hljs-string">&apos;Upgrade&apos;</span>;
+        }
+     }
+</code></pre>
+<p>&#x5982;&#x679C;&#x6253;&#x4E0D;&#x5F00;&#x601D;&#x6E90;&#x7B14;&#x8BB0;,&#x67E5;&#x770B;F12,&#x663E;&#x793A; websocket&#x95EE;&#x9898;&#x5219;&#x662F;&#x914D;&#x7F6E; /ws &#x51FA;&#x73B0;&#x4E86;&#x95EE;&#x9898;</p>
+<p>&#x5982;&#x679C;&#x8BBF;&#x95EE;&#x601D;&#x6E90;&#x7F51;&#x9875;&#x8FD4;&#x56DE;&#x4E86;json&#x63D0;&#x793A;:</p>
+<p><code>&#x8BBF;&#x95EE;&#x9274;&#x6743;&#x5931;&#x8D25;&#xFF0C;&#x8BF7;&#x5237;&#x65B0;&#x6216;&#x8005;&#x91CD;&#x65B0;&#x6253;&#x5F00;</code></p>
+<p>&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x6DFB;&#x52A0;</p>
+<pre><code class="lang-nginx">            <span class="hljs-attribute">proxy_set_header</span> If-Modified-Since <span class="hljs-string">&quot;&quot;</span>;
+            <span class="hljs-attribute">proxy_set_header</span> If-None-Match <span class="hljs-string">&quot;&quot;</span>;
+</code></pre>
+<p>&#x4EE5;&#x4E0B;&#x81EA;&#x7528;nginx</p>
+<pre><code class="lang-nginx">
+<span class="hljs-section">server</span> {
+    <span class="hljs-attribute">listen</span> <span class="hljs-number">443</span> ssl;
+
+    <span class="hljs-attribute">http2</span> <span class="hljs-literal">on</span>;
+
+    <span class="hljs-attribute">server_name</span> https://siyuan.url; 
+
+    <span class="hljs-attribute">include</span> /config/nginx/ssl.conf;
+
+    <span class="hljs-attribute">client_max_body_size</span> <span class="hljs-number">10m</span>;
+
+<span class="hljs-comment">#&#x81EA;&#x5B9A;&#x66FF;&#x6362;url</span>
+    <span class="hljs-attribute">location</span> / {
+
+            <span class="hljs-attribute">proxy_pass</span> https://siyuan.url;
+            <span class="hljs-attribute">proxy_redirect</span> http:// https://;
+    }
+
+    <span class="hljs-attribute">location</span> /ws {
+            <span class="hljs-attribute">proxy_pass</span> https://siyuan.url;
+            <span class="hljs-attribute">proxy_read_timeout</span> <span class="hljs-number">60s</span>;
+            <span class="hljs-attribute">proxy_http_version</span> <span class="hljs-number">1</span>.<span class="hljs-number">1</span>;
+            <span class="hljs-attribute">proxy_set_header</span> Upgrade <span class="hljs-variable">$http_upgrade</span>;
+            <span class="hljs-attribute">proxy_set_header</span> Connection <span class="hljs-string">&apos;Upgrade&apos;</span>;
+    <span class="hljs-comment">#&#x6DFB;&#x52A0;&#x4E0B;&#x9762;2&#x4E2A;</span>
+            <span class="hljs-attribute">proxy_set_header</span> If-Modified-Since <span class="hljs-string">&quot;&quot;</span>;
+            <span class="hljs-attribute">proxy_set_header</span> If-None-Match <span class="hljs-string">&quot;&quot;</span>;
+    }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -389,10 +457,6 @@
             
                 
                 
-                <a href="TweakFail.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Checkra1n 越狱后插件不加载的一个解决办法">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
             
         
     </div>
@@ -400,7 +464,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MonkeyDev","level":"2.1.1","depth":2,"next":{"title":"Checkra1n 越狱后插件不加载的一个解决办法","level":"2.1.2","depth":2,"path":"Reverse/TweakFail.md","ref":"Reverse/TweakFail.md","articles":[]},"previous":{"title":"Reverse","level":"2.1","depth":1,"ref":"","articles":[{"title":"MonkeyDev","level":"2.1.1","depth":2,"path":"Reverse/MonkeyDev.md","ref":"Reverse/MonkeyDev.md","articles":[]},{"title":"Checkra1n 越狱后插件不加载的一个解决办法","level":"2.1.2","depth":2,"path":"Reverse/TweakFail.md","ref":"Reverse/TweakFail.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Reverse/MonkeyDev.md","mtime":"2024-11-20T04:25:56.092Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-11-20T04:26:22.070Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Nginx部署思源笔记Docker","level":"3.1.1","depth":2,"previous":{"title":"Devops","level":"3.1","depth":1,"ref":"","articles":[{"title":"Nginx部署思源笔记Docker","level":"3.1.1","depth":2,"path":"Devops/nginxsiyuan.md","ref":"./Devops/nginxsiyuan.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Devops/nginxsiyuan.md","mtime":"2024-11-20T04:25:56.092Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-11-20T04:26:22.070Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
