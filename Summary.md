@@ -10,6 +10,7 @@
 - [Flutter Dev](./Flutter/ReadMe.md)
   - [Flutter PageView/TabBarView等控件保存状态的问题解决方案](./Flutter/storageState.md)
   - [Flutter自定义动态长度TabBar样式后与TabBarView联动过慢解决](./Flutter/tabbarview.md)
+  - [通过Github Action部署Flutter Web 项目为 Github Pages](./Flutter/webongithubpage.md)
 
 
 
