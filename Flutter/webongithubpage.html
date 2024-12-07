@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>MonkeyDev · GitBook</title>
+        <title>通过Github Action部署Flutter Web 项目为 Github Pages · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="TweakFail.html" />
     
+    <link rel="prev" href="tabbarview.html" />
     
 
     </head>
@@ -171,9 +171,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../Flutter/ReadMe.html">
+        <li class="chapter " data-level="1.3" data-path="ReadMe.html">
             
-                <a href="../Flutter/ReadMe.html">
+                <a href="ReadMe.html">
             
                     
                     Flutter Dev
@@ -185,9 +185,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../Flutter/storageState.html">
+        <li class="chapter " data-level="1.3.1" data-path="storageState.html">
             
-                <a href="../Flutter/storageState.html">
+                <a href="storageState.html">
             
                     
                     Flutter PageView/TabBarView等控件保存状态的问题解决方案
@@ -198,9 +198,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../Flutter/tabbarview.html">
+        <li class="chapter " data-level="1.3.2" data-path="tabbarview.html">
             
-                <a href="../Flutter/tabbarview.html">
+                <a href="tabbarview.html">
             
                     
                     Flutter自定义动态长度TabBar样式后与TabBarView联动过慢解决
@@ -211,9 +211,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="../Flutter/webongithubpage.html">
+        <li class="chapter active" data-level="1.3.3" data-path="webongithubpage.html">
             
-                <a href="../Flutter/webongithubpage.html">
+                <a href="webongithubpage.html">
             
                     
                     通过Github Action部署Flutter Web 项目为 Github Pages
@@ -250,9 +250,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.1.1" data-path="MonkeyDev.html">
+        <li class="chapter " data-level="2.1.1" data-path="../Reverse/MonkeyDev.html">
             
-                <a href="MonkeyDev.html">
+                <a href="../Reverse/MonkeyDev.html">
             
                     
                     MonkeyDev
@@ -263,9 +263,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.2" data-path="TweakFail.html">
+        <li class="chapter " data-level="2.1.2" data-path="../Reverse/TweakFail.html">
             
-                <a href="TweakFail.html">
+                <a href="../Reverse/TweakFail.html">
             
                     
                     Checkra1n 越狱后插件不加载的一个解决办法
@@ -350,7 +350,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >MonkeyDev</a>
+        <a href=".." >通过Github Action部署Flutter Web 项目为 Github Pages</a>
     </h1>
 </div>
 
@@ -365,15 +365,68 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="monkeydev-&#x5F00;&#x53D1;&#x95EE;&#x9898;">MonkeyDev &#x5F00;&#x53D1;&#x95EE;&#x9898;</h1>
-<h4 id="1-monkeydev-&#x62A5;&#x9519;an-empty-identity-&#x5904;&#x7406;&#x65B9;&#x5F0F;">1. MonkeyDev &#x62A5;&#x9519;An empty identity ...&#x5904;&#x7406;&#x65B9;&#x5F0F;</h4>
-<p>Xcode10.3&#x7528;MonkeyDev &#x521B;&#x5EFA;LogosTweak&#x9879;&#x76EE;&#x63D0;&#x793A;&#x9519;&#x8BEF;&#x89E3;&#x51B3;&#x529E;&#x6CD5;
-&#x9519;&#x8BEF;&#xFF1A;<strong>An empty identity is not valid when signing a binary for the product type &#x2018;Dynamic Library&#x2019;</strong></p>
-<p>&#x5728;&#x8BE5;&#x9879;&#x76EE;&#x7684;<code>TARGETS</code>&#x7684;<code>Build settings</code>&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x53C2;&#x6570;, &#x70B9;&#x51FB;<code>Add User-Defined Setting</code>, &#x6DFB;&#x52A0;<code>CODE_SIGNING_ALLOWED=NO</code>, &#x91CD;&#x65B0;&#x7F16;&#x8BD1;, &#x95EE;&#x9898;&#x89E3;&#x51B3;.</p>
-<p><img src="http://sylarimage.oss-cn-shenzhen.aliyuncs.com/uPic/webp-20220101100344824.jpg" alt="img"></p>
-<p><img src="http://sylarimage.oss-cn-shenzhen.aliyuncs.com/uPic/webp-20220101100353604.jpg" alt="img"></p>
-<h4 id="2-ld-building-for-ios-but-linking-in-tbd-file-opttheosvendorlibcydiasubstrateframeworkcydiasubstratetbd-built-for-ios-simulator-file-opttheosvendorlibcydiasubstrateframeworkcydiasubstratetbd-for-architecture-arm64-clang-error-linker-command-failed-with-exit-code-1-use--v-to-see-invocation">2. ld: building for iOS, but linking in .tbd file (/opt/theos/vendor/lib/CydiaSubstrate.framework/CydiaSubstrate.tbd) built for iOS Simulator, file &#x2018;/opt/theos/vendor/lib/CydiaSubstrate.framework/CydiaSubstrate.tbd&#x2019; for architecture arm64 clang: error: linker command failed with exit code 1 (use -v to see invocation)</h4>
-<p>&#x5C06;  /opt/theos/vendor/lib/CydiaSubstrate.framework &#x4E0B; CydiaSubstrate.tbd &#x6587;&#x672C;&#x6253;&#x5F00;&#xFF0C;&#x5220;&#x9664;archs&#x540E;&#x9762;&#x7684;&#x4E24;&#x9879;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x6210;&#x529F;&#x4E86;&#x3002;</p>
+                                <h1 id="&#x901A;&#x8FC7;github-action-&#x90E8;&#x7F72;-flutter-web">&#x901A;&#x8FC7;Github Action &#x90E8;&#x7F72; Flutter Web</h1>
+<p>push&#x5230;github&#x524D;&#x9700;&#x8981;&#x4FEE;&#x6539;  Flutter &#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;web&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x7684; index.html</p>
+<pre><code class="lang-html">  <span class="hljs-comment">&lt;!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash &quot;/&quot; in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  --&gt;</span>
+<span class="hljs-comment">&lt;!-- &#x8FD9;&#x91CC;&#x6539;&#x6210;&#x4ED3;&#x5E93;&#x540D;&#x79F0; --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">base</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/YOUR-REPO-NAME/&quot;</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-yaml"><span class="hljs-comment">#&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;Action &#x53EF;&#x4EE5;&#x90E8;&#x7F72; GithubPage</span>
+<span class="hljs-attr">name:</span> Flutter Web
+<span class="hljs-attr">on:</span>
+<span class="hljs-attr">  push:</span>
+<span class="hljs-attr">    branches:</span>
+<span class="hljs-bullet">      -</span> master
+<span class="hljs-attr">jobs:</span>
+<span class="hljs-attr">  build:</span>
+<span class="hljs-attr">    name:</span> Build Web
+<span class="hljs-attr">    env:</span>
+          <span class="hljs-comment">#&#x5728; &#x4ED3;&#x5E93; Setting &#x4E2D;&#x8BBE;&#x7F6E;&#x79D8;&#x94A5;</span>
+<span class="hljs-attr">      my_secret:</span> ${{secrets.PERSONAL_TOKEN}}
+<span class="hljs-attr">    runs-on:</span> ubuntu-latest
+<span class="hljs-attr">    steps:</span>
+<span class="hljs-attr">      - uses:</span> actions/checkout@v4
+<span class="hljs-attr">      - uses:</span> subosito/flutter-action@v2
+<span class="hljs-attr">        with:</span>
+<span class="hljs-attr">          channel:</span> <span class="hljs-string">&quot;stable&quot;</span>
+          <span class="hljs-comment">#&#x6839;&#x636E;&#x6240;&#x9700;Flutter Version &#x81EA;&#x884C;&#x4FEE;&#x6539;</span>
+<span class="hljs-attr">          flutter-version:</span> <span class="hljs-number">3.24</span><span class="hljs-number">.5</span>
+<span class="hljs-attr">      - run:</span> flutter --version
+<span class="hljs-attr">      - run:</span> flutter config --enable-web
+<span class="hljs-attr">      - run:</span> flutter pub get
+<span class="hljs-attr">      - run:</span> flutter channel master
+<span class="hljs-attr">      - run:</span> flutter upgrade
+<span class="hljs-attr">      - run:</span> flutter build web --release
+<span class="hljs-attr">      - run:</span> <span class="hljs-string">|
+          cd build/web
+          git init
+          #&#x81EA;&#x884C;&#x4FEE;&#x6539;git push email
+          git config --global user.email YOUR-EMAIL
+          #&#x81EA;&#x884C;&#x4FEE;&#x6539;git push username
+          git config --global user.name YOUR-NAME
+          git status
+                    #&#x81EA;&#x884C;&#x4FEE;&#x6539;&#x4ED3;&#x5E93;&#x5730;&#x5740;&#x7F51;&#x5740;
+          git remote add origin https://$<span class="hljs-template-variable">{{secrets.PERSONAL_TOKEN}}</span>@github.com/YOUR/REPO.git
+          #push&#x5230;&#x4ED3;&#x5E93; gh-pages &#x5206;&#x652F;, &#x5728;&#x4ED3;&#x5E93; Setting &#x4E2D; Pages&#x542F;&#x7528;&#x8BE5;&#x5206;&#x652F;&#x7684;Pages&#x529F;&#x80FD;
+          git checkout -b gh-pages
+          git add --all
+          git commit -m &quot;update&quot;
+          git push origin gh-pages -f
+</span></code></pre>
+<h1 id="reference">Reference</h1>
+<p><a href="https://juejin.cn/post/7366062210932260918" target="_blank">https://juejin.cn/post/7366062210932260918</a></p>
 
                                 
                                 </section>
@@ -401,10 +454,10 @@
 
             
                 
-                
-                <a href="TweakFail.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Checkra1n 越狱后插件不加载的一个解决办法">
-                    <i class="fa fa-angle-right"></i>
+                <a href="tabbarview.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Flutter自定义动态长度TabBar样式后与TabBarView联动过慢解决">
+                    <i class="fa fa-angle-left"></i>
                 </a>
+                
                 
             
         
@@ -413,7 +466,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MonkeyDev","level":"2.1.1","depth":2,"next":{"title":"Checkra1n 越狱后插件不加载的一个解决办法","level":"2.1.2","depth":2,"path":"Reverse/TweakFail.md","ref":"Reverse/TweakFail.md","articles":[]},"previous":{"title":"Reverse","level":"2.1","depth":1,"ref":"","articles":[{"title":"MonkeyDev","level":"2.1.1","depth":2,"path":"Reverse/MonkeyDev.md","ref":"Reverse/MonkeyDev.md","articles":[]},{"title":"Checkra1n 越狱后插件不加载的一个解决办法","level":"2.1.2","depth":2,"path":"Reverse/TweakFail.md","ref":"Reverse/TweakFail.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Reverse/MonkeyDev.md","mtime":"2024-12-07T12:46:50.674Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-12-07T12:47:17.142Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"通过Github Action部署Flutter Web 项目为 Github Pages","level":"1.3.3","depth":2,"next":{"title":"Reverse","level":"2.1","depth":1,"ref":"","articles":[{"title":"MonkeyDev","level":"2.1.1","depth":2,"path":"Reverse/MonkeyDev.md","ref":"Reverse/MonkeyDev.md","articles":[]},{"title":"Checkra1n 越狱后插件不加载的一个解决办法","level":"2.1.2","depth":2,"path":"Reverse/TweakFail.md","ref":"Reverse/TweakFail.md","articles":[]}]},"previous":{"title":"Flutter自定义动态长度TabBar样式后与TabBarView联动过慢解决","level":"1.3.2","depth":2,"path":"Flutter/tabbarview.md","ref":"./Flutter/tabbarview.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Flutter/webongithubpage.md","mtime":"2024-12-07T12:46:50.674Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-12-07T12:47:17.142Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
