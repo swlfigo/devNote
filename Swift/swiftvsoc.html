@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>卸载 Cocoapods · GitBook</title>
+        <title>Swift vs OC · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="optional.html" />
     
-    <link rel="prev" href="TextFieldByteLimit.html" />
+    
+    <link rel="prev" href="ReadME.html" />
     
 
     </head>
@@ -100,9 +102,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../Swift/ReadME.html">
+        <li class="chapter " data-level="1.2" data-path="ReadME.html">
             
-                <a href="../Swift/ReadME.html">
+                <a href="ReadME.html">
             
                     
                     Swift
@@ -114,9 +116,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../Swift/swiftvsoc.html">
+        <li class="chapter active" data-level="1.2.1" data-path="swiftvsoc.html">
             
-                <a href="../Swift/swiftvsoc.html">
+                <a href="swiftvsoc.html">
             
                     
                     Swift vs OC
@@ -127,9 +129,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../Swift/optional.html">
+        <li class="chapter " data-level="1.2.2" data-path="optional.html">
             
-                <a href="../Swift/optional.html">
+                <a href="optional.html">
             
                     
                     Optional实现原理
@@ -145,9 +147,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="ReadME.html">
+        <li class="chapter " data-level="1.3" data-path="../iOS/ReadME.html">
             
-                <a href="ReadME.html">
+                <a href="../iOS/ReadME.html">
             
                     
                     iOS Dev
@@ -159,9 +161,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="TableViewHeaderViewAutoHeight.html">
+        <li class="chapter " data-level="1.3.1" data-path="../iOS/TableViewHeaderViewAutoHeight.html">
             
-                <a href="TableViewHeaderViewAutoHeight.html">
+                <a href="../iOS/TableViewHeaderViewAutoHeight.html">
             
                     
                     TableHeaderView AutoLayout
@@ -172,9 +174,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="iOS14CellHierarchy.html">
+        <li class="chapter " data-level="1.3.2" data-path="../iOS/iOS14CellHierarchy.html">
             
-                <a href="iOS14CellHierarchy.html">
+                <a href="../iOS/iOS14CellHierarchy.html">
             
                     
                     iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测)
@@ -185,9 +187,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="TextFieldByteLimit.html">
+        <li class="chapter " data-level="1.3.3" data-path="../iOS/TextFieldByteLimit.html">
             
-                <a href="TextFieldByteLimit.html">
+                <a href="../iOS/TextFieldByteLimit.html">
             
                     
                     TextView/TextField 输入限制
@@ -198,9 +200,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.4" data-path="UninstallCocoapods.html">
+        <li class="chapter " data-level="1.3.4" data-path="../iOS/UninstallCocoapods.html">
             
-                <a href="UninstallCocoapods.html">
+                <a href="../iOS/UninstallCocoapods.html">
             
                     
                     卸载 Cocoapods
@@ -440,7 +442,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >卸载 Cocoapods</a>
+        <a href=".." >Swift vs OC</a>
     </h1>
 </div>
 
@@ -455,20 +457,24 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5378;&#x8F7D;-cocoapods">&#x5378;&#x8F7D; Cocoapods</h1>
-<pre><code class="lang-shell">#!/bin/zsh
-cd `dirname $0`
-
-echo &quot;&#x5148;&#x5378;&#x8F7D;&#x76EE;&#x524D;&#x6240;&#x6709;cocoapods&#x76F8;&#x5173;&quot;
-
-#&#x7531;&#x4E8E;&#x4E0A;&#x6B21;&#x5B89;&#x88C5;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x6743;&#x9650;&#xFF0C;&#x6240;&#x4EE5;&#x591A;&#x5378;&#x8F7D;&#x4E00;&#x4E0B;&#xFF0C;fml
-gem list  cocoapods xcodeproj | grep -E &apos;cocoapods&apos; | awk &apos;{print $1}&apos; | xargs -I {} sudo gem uninstall {} -q -a --force
-gem list  cocoapods xcodeproj | grep -E &apos;cocoapods&apos; | awk &apos;{print $1}&apos; | xargs -I {} gem uninstall {} -q -a --force
-
-
-sudo gem uninstall xcodeproj -q -a --force
-gem uninstall xcodeproj -q -a --force
-</code></pre>
+                                <h1 id="swift-&#x4E0E;-oc-&#x5DEE;&#x5F02;">Swift &#x4E0E; OC &#x5DEE;&#x5F02;</h1>
+<h2 id="1-&#x5728;swift&#x4E2D;class&#x548C;struct&#x7684;&#x5171;&#x540C;&#x70B9;&#x548C;&#x533A;&#x522B;&#xFF1F;">1. &#x5728;Swift&#x4E2D;class&#x548C;struct&#x7684;&#x5171;&#x540C;&#x70B9;&#x548C;&#x533A;&#x522B;&#xFF1F;</h2>
+<p>Class &#x548C; Struct &#x662F; Swift &#x4E2D;&#x4E24;&#x79CD;&#x57FA;&#x672C;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x6709;&#x4E00;&#x4E9B;&#x5171;&#x540C;&#x70B9;&#x548C;&#x533A;&#x522B;&#x3002;</p>
+<p>&#x5171;&#x540C;&#x70B9;:</p>
+<ol>
+<li>&#x90FD;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x5C5E;&#x6027; (properties) &#x548C;&#x65B9;&#x6CD5; (methods)&#x3002;</li>
+<li>&#x90FD;&#x53EF;&#x4EE5;&#x9075;&#x5FAA;&#x534F;&#x8BAE; (protocols)&#x3002;</li>
+<li>&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x8F6C;&#x6362; (type casting)&#x3002;</li>
+<li>&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6269;&#x5C55; (extensions) &#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x529F;&#x80FD;&#x3002;
+&#x533A;&#x522B;&#xFF1A;</li>
+<li>&#x4E0D;&#x540C;&#x7684;&#x521B;&#x5EFA;&#x65B9;&#x5F0F;: &#x7ED3;&#x6784;&#x4F53;&#x662F;&#x7531; struct &#x5173;&#x952E;&#x5B57;&#x521B;&#x5EFA;&#xFF0C;&#x7C7B;&#x662F;&#x7531; class &#x5173;&#x952E;&#x5B57;&#x521B;&#x5EFA;&#x3002;</li>
+<li>&#x503C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;: &#x7ED3;&#x6784;&#x4F53;&#x662F;&#x503C;&#x7C7B;&#x578B;&#xFF0C;&#x7C7B;&#x662F;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x3002;&#x7ED3;&#x6784;&#x4F53;&#x5728;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#x548C;&#x4F20;&#x9012;&#x65F6;&#x4F1A;&#x8FDB;&#x884C;&#x503C;&#x62F7;&#x8D1D;&#xFF0C;&#x7C7B;&#x4F1A;&#x8FDB;&#x884C;&#x5F15;&#x7528;&#x4F20;&#x9012;&#x3002;</li>
+<li>&#x7EE7;&#x627F;: &#x7C7B;&#x652F;&#x6301;&#x7EE7;&#x627F;&#xFF0C;&#x7ED3;&#x6784;&#x4F53;&#x4E0D;&#x652F;&#x6301;&#x3002;</li>
+<li>deinit: &#x7C7B;&#x6709; deinit &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x6E05;&#x7406;&#x64CD;&#x4F5C;,&#x7ED3;&#x6784;&#x4F53;&#x6CA1;&#x6709;</li>
+<li>&#x901A;&#x8FC7;mutating&#x5173;&#x952E;&#x5B57;&#x6765;&#x4FEE;&#x6539;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x800C;&#x7C7B;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x3002;</li>
+<li>&#x6839;&#x636E;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x6765;&#x51B3;&#x5B9A;&#x662F;&#x4F7F;&#x7528;&#x7C7B;&#x8FD8;&#x662F;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x7EE7;&#x627F;&#x6216;&#x8005;&#x5728;&#x8D4B;&#x503C;&#x6216;&#x4F20;&#x9012;&#x65F6;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5F15;&#x7528;&#x4F20;&#x9012;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x7C7B;&#xFF1B;&#x5982;&#x679C;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5E76;&#x4E14;&#x9700;&#x8981;&#x5728;&#x8D4B;&#x503C;&#x6216;&#x4F20;&#x9012;&#x65F6;&#x8FDB;&#x884C;&#x503C;&#x62F7;&#x8D1D;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x4F53;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;,&#x7ED3;&#x6784;&#x4F53;&#x548C;&#x7C7B;&#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x534F;&#x8BAE;&#x548C;&#x6269;&#x5C55;,&#x534F;&#x8BAE;&#x7EE7;&#x627F;&#x4EE5;&#x53CA;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x6765;&#x6269;&#x5C55;&#x529F;&#x80FD;&#x7684;,&#x800C;&#x4E0D;&#x4EC5;&#x4EC5;&#x9650;&#x4E8E;&#x7C7B;.</li>
+</ol>
+<p>&#x9009;&#x62E9;&#x7ED3;&#x6784;&#x4F53;&#x8FD8;&#x662F;&#x7C7B;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x9700;&#x6C42;&#x548C;&#x9884;&#x671F;&#x884C;&#x4E3A;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x9700;&#x8981;&#x7EE7;&#x627F;&#x6216;&#x8005;&#x5728;&#x8D4B;&#x503C;&#x548C;&#x4F20;&#x9012;&#x65F6;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x503C;&#x62F7;&#x8D1D;&#xFF0C;&#x5219;&#x9009;&#x62E9;&#x7ED3;&#x6784;&#x4F53;&#xFF1B;&#x5982;&#x679C;&#x9700;&#x8981;&#x7EE7;&#x627F;&#x6216;&#x8005;&#x5728;&#x8D4B;&#x503C;&#x548C;&#x4F20;&#x9012;&#x65F6;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5F15;&#x7528;&#x4F20;&#x9012;&#xFF0C;&#x5219;&#x9009;&#x62E9;&#x7C7B;&#x3002;</p>
 
                                 
                                 </section>
@@ -496,10 +502,14 @@ gem uninstall xcodeproj -q -a --force
 
             
                 
-                <a href="TextFieldByteLimit.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: TextView/TextField 输入限制">
+                <a href="ReadME.html" class="navigation navigation-prev " aria-label="Previous page: Swift">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="optional.html" class="navigation navigation-next " aria-label="Next page: Optional实现原理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -508,7 +518,7 @@ gem uninstall xcodeproj -q -a --force
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"卸载 Cocoapods","level":"1.3.4","depth":2,"next":{"title":"Metal","level":"1.4","depth":1,"ref":"","articles":[{"title":"Metal","level":"1.4.1","depth":2,"path":"Metal/Metal.md","ref":"Metal/Metal.md","articles":[]},{"title":"MTKView","level":"1.4.2","depth":2,"path":"Metal/MTKView.md","ref":"Metal/MTKView.md","articles":[]}]},"previous":{"title":"TextView/TextField 输入限制","level":"1.3.3","depth":2,"path":"iOS/TextFieldByteLimit.md","ref":"iOS/TextFieldByteLimit.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"}},"file":{"path":"iOS/UninstallCocoapods.md","mtime":"2025-02-14T14:21:00.951Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-02-14T14:21:28.738Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Swift vs OC","level":"1.2.1","depth":2,"next":{"title":"Optional实现原理","level":"1.2.2","depth":2,"path":"Swift/optional.md","ref":"./Swift/optional.md","articles":[]},"previous":{"title":"Swift","level":"1.2","depth":1,"path":"Swift/ReadME.md","ref":"./Swift/ReadME.md","articles":[{"title":"Swift vs OC","level":"1.2.1","depth":2,"path":"Swift/swiftvsoc.md","ref":"./Swift/swiftvsoc.md","articles":[]},{"title":"Optional实现原理","level":"1.2.2","depth":2,"path":"Swift/optional.md","ref":"./Swift/optional.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"}},"file":{"path":"Swift/swiftvsoc.md","mtime":"2025-02-14T14:21:00.951Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-02-14T14:21:28.738Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
