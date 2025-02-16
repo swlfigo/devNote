@@ -1,0 +1,748 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Swift函数派发机制 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../iOS/ReadME.html" />
+    
+    
+    <link rel="prev" href="optional.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="ReadME.html">
+            
+                <a href="ReadME.html">
+            
+                    
+                    Swift
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="swiftvsoc.html">
+            
+                <a href="swiftvsoc.html">
+            
+                    
+                    Swift vs OC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="optional.html">
+            
+                <a href="optional.html">
+            
+                    
+                    Optional实现原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="swiftmethoddispatch.html">
+            
+                <a href="swiftmethoddispatch.html">
+            
+                    
+                    Swift函数派发机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../iOS/ReadME.html">
+            
+                <a href="../iOS/ReadME.html">
+            
+                    
+                    iOS Dev
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../iOS/TableViewHeaderViewAutoHeight.html">
+            
+                <a href="../iOS/TableViewHeaderViewAutoHeight.html">
+            
+                    
+                    TableHeaderView AutoLayout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../iOS/iOS14CellHierarchy.html">
+            
+                <a href="../iOS/iOS14CellHierarchy.html">
+            
+                    
+                    iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../iOS/TextFieldByteLimit.html">
+            
+                <a href="../iOS/TextFieldByteLimit.html">
+            
+                    
+                    TextView/TextField 输入限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../iOS/UninstallCocoapods.html">
+            
+                <a href="../iOS/UninstallCocoapods.html">
+            
+                    
+                    卸载 Cocoapods
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Metal
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Metal/Metal.html">
+            
+                <a href="../Metal/Metal.html">
+            
+                    
+                    Metal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Metal/MTKView.html">
+            
+                <a href="../Metal/MTKView.html">
+            
+                    
+                    MTKView
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Flutter/ReadMe.html">
+            
+                <a href="../Flutter/ReadMe.html">
+            
+                    
+                    Flutter Dev
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Flutter/storageState.html">
+            
+                <a href="../Flutter/storageState.html">
+            
+                    
+                    Flutter PageView/TabBarView等控件保存状态的问题解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Flutter/tabbarview.html">
+            
+                <a href="../Flutter/tabbarview.html">
+            
+                    
+                    Flutter自定义动态长度TabBar样式后与TabBarView联动过慢解决
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Flutter/webongithubpage.html">
+            
+                <a href="../Flutter/webongithubpage.html">
+            
+                    
+                    通过Github Action部署Flutter Web 项目为 Github Pages
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    Reverse
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../Reverse/MonkeyDev.html">
+            
+                <a href="../Reverse/MonkeyDev.html">
+            
+                    
+                    MonkeyDev
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../Reverse/TweakFail.html">
+            
+                <a href="../Reverse/TweakFail.html">
+            
+                    
+                    Checkra1n 越狱后插件不加载的一个解决办法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    Devops
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../Devops/nginxsiyuan.html">
+            
+                <a href="../Devops/nginxsiyuan.html">
+            
+                    
+                    Nginx部署思源笔记Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Swift函数派发机制</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="swift&#x51FD;&#x6570;&#x6D3E;&#x53D1;&#x673A;&#x5236;">Swift&#x51FD;&#x6570;&#x6D3E;&#x53D1;&#x673A;&#x5236;</h1>
+<blockquote>
+<p>&#x672C;&#x6587;&#x7531; <a href="http://ksria.com/simpread/" target="_blank">&#x7B80;&#x60A6; SimpRead</a> &#x8F6C;&#x7801;&#xFF0C; &#x539F;&#x6587;&#x5730;&#x5740; <a href="https://harryyan.github.io/2021/08/27/Swift%E5%87%BD%E6%95%B0%E6%B4%BE%E5%8F%91%E6%9C%BA%E5%88%B6/" target="_blank">harryyan.github.io</a></p>
+<p>&#x4E00;&#x4E2A;&#x4EE4;&#x4EBA;&#x56F0;&#x60D1;&#x7684;&#x5C0F;&#x95EE;&#x9898;&#x5927;&#x5BB6;&#x8BF7;&#x770B;&#x4E0B;&#x9762;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801; (&#x6458;&#x81EA; objc.io twitter &#x7684; swift quiz) 1234567891011121314151617protocol Drawing { ......</p>
+</blockquote>
+<p>&#x5927;&#x5BB6;&#x8BF7;&#x770B;&#x4E0B;&#x9762;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801; (<em>&#x6458;&#x81EA; objc.io twitter &#x7684; swift quiz</em>)</p>
+<pre><code>protocol Drawing {
+  func render()
+}
+
+extension Drawing {
+  func circle() { p rint(&quot;protocol&quot;)}
+  func render() { circle()}
+}
+
+class SVG: Drawing {
+  func circle(){ print(&quot;class&quot;) }
+}
+
+SVG().render()
+
+// what&apos;s the output?
+</code></pre><p>&#x8BF7;&#x7ED9;&#x51FA;&#x4F60;&#x7684;&#x7B54;&#x6848;&#x1F604;</p>
+<p>&#x6839;&#x636E;&#x5F53;&#x65F6;&#x7684;&#x7EDF;&#x8BA1;&#xFF0C;43% &#x9009;&#x62E9;&#x4E86; protocol, 57% &#x9009;&#x62E9;&#x4E86; class&#x3002;&#x4F46;&#x771F;&#x7406;&#x5F80;&#x5F80;&#x638C;&#x63E1;&#x5728;&#x5C11;&#x6570;&#x4EBA;&#x624B;&#x4E2D;&#xFF0C;&#x6B63;&#x786E;&#x7B54;&#x6848;&#x662F; protocol&#x3002;objc &#x7ED9;&#x51FA;&#x7684;&#x89E3;&#x91CA;&#x662F;: <strong>circle &#x51FD;&#x6570;&#x58F0;&#x660E;&#x5728; protocol &#x7684; extension &#x91CC;&#x9762;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x662F;&#x52A8;&#x6001;&#x6D3E;&#x53D1;&#xFF0C;&#x5E76;&#x4E14;&#x7C7B;&#x6CA1;&#x6709;&#x5B9E;&#x73B0; render &#x51FD;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x8F93;&#x51FA;&#x4E3A; protocol.</strong> &#x66F4;&#x4E3A;&#x51C6;&#x786E;&#x7684;&#x8BF4;&#x6CD5;&#x5E94;&#x8BE5;&#x662F;: <strong>extension &#x4E2D;&#x58F0;&#x660E;&#x7684;&#x51FD;&#x6570;&#x662F;&#x9759;&#x6001;&#x6D3E;&#x53D1;&#xFF0C;&#x7F16;&#x8BD1;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x5DF2;&#x7ECF;&#x786E;&#x5B9A;&#x4E86;&#x8C03;&#x7528;&#x5730;&#x5740;&#xFF0C;&#x7C7B;&#x65E0;&#x6CD5;&#x91CD;&#x5199;&#x5B9E;&#x73B0;&#x3002;</strong></p>
+<p>&#x5728;&#x66F4;&#x6DF1;&#x5165;&#x7814;&#x7A76; Swift &#x51FD;&#x6570;&#x6D3E;&#x53D1;&#x673A;&#x5236;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x5FC5;&#x8981;&#x4E86;&#x89E3;&#x4E0B;&#x51FD;&#x6570;&#x6D3E;&#x53D1;&#x7684;&#x57FA;&#x672C;&#x77E5;&#x8BC6;&#x3002;&#x51FD;&#x6570;&#x6D3E;&#x53D1;&#x5C31;&#x662F; CPU &#x5728;&#x5185;&#x5B58;&#x4E2D;&#x627E;&#x5230;&#x8BE5;&#x51FD;&#x6570;&#x5730;&#x5740;&#x5E76;&#x8C03;&#x7528;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x51FD;&#x6570;&#x6D3E;&#x53D1;&#x6709;&#x4E09;&#x79CD;&#x7C7B;&#x578B;: <strong>&#x9759;&#x6001;&#x6D3E;&#x53D1;&#xFF0C;&#x51FD;&#x6570;&#x8868;&#x6D3E;&#x53D1;&#x548C;&#x6D88;&#x606F;&#x6D3E;&#x53D1;&#x3002;</strong>&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x9009;&#x62E9;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5E73;&#x8861;&#x7A0B;&#x5E8F;&#x7684;&#x6267;&#x884C;&#x6548;&#x7387;&#x548C;&#x52A8;&#x6001;&#x6027;&#xFF0C;&#x9009;&#x62E9;&#x6700;&#x9002;&#x5408;&#x5F53;&#x4E0B;&#x60C5;&#x666F;&#x7684;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#x3002;</p>
+<h2 id="&#x76F4;&#x63A5;&#x6D3E;&#x53D1;">&#x76F4;&#x63A5;&#x6D3E;&#x53D1;</h2>
+<p>&#x76F4;&#x63A5;&#x6D3E;&#x53D1;&#x662F;&#x4E09;&#x79CD;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#x4E2D;&#x6700;&#x5FEB;&#x7684;&#x3002;CPU &#x76F4;&#x63A5;&#x6309;&#x7167;&#x51FD;&#x6570;&#x5730;&#x5740;&#x8C03;&#x7528;&#xFF0C;&#x4F7F;&#x7528;&#x6700;&#x5C11;&#x7684;&#x6307;&#x4EE4;&#x96C6;&#xFF0C;&#x529E;&#x6700;&#x5FEB;&#x7684;&#x4E8B;&#x60C5;&#x3002;&#x5F53;&#x7F16;&#x8BD1;&#x5668;&#x5BF9;&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E5F;&#x5E38;&#x5E38;&#x5C06;&#x51FD;&#x6570;&#x5185;&#x8054;&#xFF0C;&#x4F7F;&#x4E4B;&#x6210;&#x4E3A;&#x76F4;&#x63A5;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#xFF0C;&#x4F18;&#x5316;&#x6267;&#x884C;&#x901F;&#x5EA6;&#x3002;&#x6211;&#x4EEC;&#x719F;&#x77E5;&#x7684; C++ &#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x76F4;&#x63A5;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#xFF0C;&#x5728; Swift &#x4E2D;&#x7ED9;&#x51FD;&#x6570;&#x52A0;&#x4E0A; <strong>final</strong> &#x5173;&#x952E;&#x5B57;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x4E5F;&#x4F1A;&#x53D8;&#x6210;&#x76F4;&#x63A5;&#x6D3E;&#x53D1;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x6709;&#x5229;&#x5C31;&#x6709;&#x5F0A;&#xFF0C;&#x76F4;&#x63A5;&#x6D3E;&#x53D1;&#x6700;&#x5927;&#x7684;&#x5F0A;&#x75C5;&#x5C31;&#x662F;&#x6CA1;&#x6709;&#x52A8;&#x6001;&#x6027;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x7EE7;&#x627F;&#x3002;</p>
+<h2 id="&#x51FD;&#x6570;&#x8868;&#x6D3E;&#x53D1;">&#x51FD;&#x6570;&#x8868;&#x6D3E;&#x53D1;</h2>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x7F16;&#x8BD1;&#x578B;&#x8BED;&#x8A00;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#xFF0C;&#x4ED6;&#x65E2;&#x4FDD;&#x8BC1;&#x4E86;&#x52A8;&#x6001;&#x6027;&#x4E5F;&#x517C;&#x987E;&#x4E86;&#x6267;&#x884C;&#x6548;&#x7387;&#x3002;&#x51FD;&#x6570;&#x6240;&#x5728;&#x7684;&#x7C7B;&#x4F1A;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x201D; &#x51FD;&#x6570;&#x8868;&#x201D;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x719F;&#x77E5;&#x7684;<strong>&#x865A;&#x51FD;&#x6570;&#x8868;</strong>&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x8868;&#x5B58;&#x53D6;&#x4E86;&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x7684;&#x6307;&#x9488;&#x3002;&#x6BCF;&#x4E2A;&#x7C7B;&#x7684; vtable &#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x5C31;&#x4F1A;&#x88AB;&#x6784;&#x5EFA;&#xFF0C;&#x6240;&#x4EE5;&#x4E0E;&#x76F4;&#x63A5;&#x6D3E;&#x53D1;&#x76F8;&#x6BD4;&#x53EA;&#x591A;&#x51FA;&#x4E86;&#x4E24;&#x4E2A;&#x8BFB;&#x53D6;&#x7684;&#x5DE5;&#x4F5C;: <strong>&#x8BFB;&#x53D6;&#x8BE5;&#x7C7B;&#x7684; vtable</strong> &#x548C;<strong>&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x6307;&#x9488;</strong>&#x3002;&#x7406;&#x8BBA;&#x4E0A;&#x8BF4;&#xFF0C;&#x51FD;&#x6570;&#x8868;&#x6D3E;&#x53D1;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x9AD8;&#x6548;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x4E0D;&#x8FC7;&#x548C;&#x76F4;&#x63A5;&#x6D3E;&#x53D1;&#x76F8;&#x6BD4;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5BF9;&#x67D0;&#x4E9B;&#x542B;&#x6709;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x51FD;&#x6570;&#x5374;&#x65E0;&#x6CD5;&#x4F18;&#x5316;&#xFF0C;&#x4E5F;&#x662F;&#x5BFC;&#x81F4;&#x51FD;&#x6570;&#x8868;&#x6D3E;&#x53D1;&#x53D8;&#x6162;&#x7684;&#x539F;&#x56E0;&#x4E4B;&#x4E00;&#x3002;&#x800C;&#x4E14; Swift &#x7C7B;&#x6269;&#x5C55;&#x91CC;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x65E0;&#x6CD5;&#x52A8;&#x6001;&#x52A0;&#x5165;&#x8BE5;&#x7C7B;&#x7684;&#x51FD;&#x6570;&#x8868;&#x4E2D;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x9759;&#x6001;&#x6D3E;&#x53D1;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x51FD;&#x6570;&#x8868;&#x6D3E;&#x53D1;&#x7684;&#x7F3A;&#x9677;&#x4E4B;&#x4E00;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x6765;&#x770B;&#x5982;&#x4E0B;&#x4EE3;&#x7801;:</p>
+<pre><code>class Vehiche {
+    func run() {}
+    func brake() {}
+}
+
+class Car: Vehiche {
+    override func brake() {}
+    func speedUp() {}
+}
+</code></pre><p>&#x5F53;&#x524D;&#x60C5;&#x666F;&#x4E0B;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x8868;: &#x4E00;&#x4E2A;&#x5C5E;&#x4E8E; <strong>Vehiche</strong> &#x7C7B;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x5C5E;&#x4E8E; <strong>Car</strong> &#x7C7B;&#xFF0C;&#x5185;&#x5B58;&#x5E03;&#x5C40;&#x5982;&#x4E0B;:</p>
+<p><img src="https://sylarimage.oss-cn-shenzhen.aliyuncs.com/uPic/Screen_Shot_2019-06-05_at_12.06.52_PM_n3inuw.png" style="zoom: 50%;"></p>
+<pre><code>let car = Car()
+car.brake()
+</code></pre><p>&#x5F53;&#x8C03;&#x7528;&#x51FD;&#x6570; <strong>brake</strong> &#x65F6;&#xFF0C;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;:</p>
+<ol>
+<li>&#x8BFB;&#x53D6;&#x8BE5;&#x5BF9;&#x8C61; (0XB00) &#x7684; vtable.</li>
+<li>&#x8BFB;&#x53D6; <strong>brake &#x51FD;&#x6570;&#x6307;&#x9488;</strong> 0x222.</li>
+<li>&#x8DF3;&#x8F6C;&#x5230;&#x5730;&#x5740; <strong>0X222</strong>&#xFF0C;&#x8BFB;&#x53D6;&#x51FD;&#x6570;&#x5B9E;&#x73B0;.</li>
+</ol>
+<h2 id="&#x6D88;&#x606F;&#x6D3E;&#x53D1;">&#x6D88;&#x606F;&#x6D3E;&#x53D1;</h2>
+<p>&#x8FD9;&#x79CD;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#x662F;&#x4E09;&#x79CD;&#x91CC;&#x9762;&#x6700;&#x52A8;&#x6001;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x3002;&#x7531;&#x4E8E; Swfit &#x4F7F;&#x7528;&#x7684;&#x4F9D;&#x65E7;&#x662F; Objc &#x7684;&#x8FD0;&#x884C;&#x65F6;&#x7CFB;&#x7EDF;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x7684;&#x6D88;&#x606F;&#x6D3E;&#x53D1;&#x5176;&#x5B9E;&#x4E5F;&#x5C31;&#x662F; Objc &#x7684; <strong>Message Passing</strong>&#x3002;</p>
+<pre><code>id returnValue = [someObject messageName:parameter];
+</code></pre><p><strong>someObject</strong> &#x5C31;&#x662F;&#x63A5;&#x6536;&#x8005;&#xFF0C;<strong>messageName</strong> &#x5C31;&#x662F;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x9009;&#x62E9;&#x5668;&#x548C;&#x53C2;&#x6570;&#x4E00;&#x8D77;&#x88AB;&#x79F0;&#x4E3A; &#x201C;<strong>&#x6D88;&#x606F;</strong> &#x201C;&#x3002;<br>&#x5F53;&#x7F16;&#x8BD1;&#x65F6;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x5C06;&#x8BE5;&#x6D88;&#x606F;&#x8F6C;&#x6362;&#x6210;&#x4E00;&#x6761;&#x6807;&#x51C6;&#x7684; C &#x8BED;&#x8A00;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code>id returnValue = objc_msgSend(someObject, @selector(messageName:), parameter);
+</code></pre><p>objc_msgSend &#x51FD;&#x6570;&#x56DE;&#x4E00;&#x53E5;&#x63A5;&#x6536;&#x8005;&#x548C;&#x9009;&#x62E9;&#x5668;&#x7684;&#x7C7B;&#x578B;&#x6765;&#x8C03;&#x7528;&#x9002;&#x5F53;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x4F1A;&#x53BB;&#x63A5;&#x6536;&#x8005;&#x6240;&#x5C5E;&#x7C7B;&#x4E2D;&#x641C;&#x7D22;&#x5176;&#x65B9;&#x6CD5;&#x5217;&#x8868;&#xFF0C;&#x5982;&#x679C;&#x80FD;&#x627E;&#x5230;&#xFF0C;&#x5219;&#x8DF3;&#x8F6C;&#x5230;&#x5BF9;&#x5E94;&#x5B9E;&#x73B0;&#xFF1B;&#x82E5;&#x627E;&#x4E0D;&#x5230;&#xFF0C;&#x5219;&#x6CBF;&#x7740;&#x7EE7;&#x627F;&#x4F53;&#x7CFB;&#x7EE7;&#x7EED;&#x5411;&#x4E0A;&#x67E5;&#x627E;&#xFF0C;&#x82E5;&#x80FD;&#x627E;&#x5230;&#xFF0C;&#x5219;&#x8DF3;&#x8F6C;&#xFF1B;&#x5982;&#x679C;&#x6700;&#x7EC8;&#x8FD8;&#x662F;&#x627E;&#x4E0D;&#x5230;&#xFF0C;&#x90A3;&#x5C31;&#x6267;&#x884C;&#x8FB9;&#x754C;&#x60C5;&#x51B5;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4F8B;&#x5982; <strong>Message forwarding</strong>&#x3002;</p>
+<p><img src="https://sylarimage.oss-cn-shenzhen.aliyuncs.com/uPic/Screen_Shot_2019-06-05_at_8.33.29_AM_nwr7rv.png" style="zoom:50%;"></p>
+<p>&#x8FD9;&#x6837;&#x505A;&#x7684;&#x597D;&#x5904;&#x5728;&#x54EA;&#x91CC;&#x5462;&#xFF1F;&#x8FD9;&#x79CD;&#x8FD0;&#x4F5C;&#x65B9;&#x5F0F;&#x7684;&#x5173;&#x952E;&#x5728;&#x4E8E;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x6539;&#x53D8;&#x51FD;&#x6570;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x5E38;&#x8BF4;&#x7684; <strong>Swizzling</strong>&#x3002;Swizzling &#x7ECF;&#x5E38;&#x7528;&#x6765;&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x4EE5;&#x53CA; hook &#x67D0;&#x4E9B;&#x6D4B;&#x8BD5; case&#x3002;</p>
+<p>KVO &#x5C31;&#x662F;&#x4F7F;&#x7528; swizzling &#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p>&#x8FD9;&#x79CD;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#x7684;&#x6D41;&#x7A0B;&#x6B65;&#x9AA4;&#x4F3C;&#x4E4E;&#x5F88;&#x591A;&#xFF0C;&#x6240;&#x5E78;&#x7684;&#x662F; objc_msgSend &#x4F1A;&#x5C06;&#x5339;&#x914D;&#x7684;&#x7ED3;&#x679C;&#x7F13;&#x5B58;&#x5230; <strong>fast map</strong> &#x4E2D;&#xFF0C;&#x800C;&#x4E14;&#x6BCF;&#x4E2A;&#x7C7B;&#x90FD;&#x6709;&#x8FD9;&#x6837;&#x4E00;&#x5757;&#x7F13;&#x5B58;&#xFF1B;&#x82E5;&#x662F;&#x4E4B;&#x540E;&#x53D1;&#x9001;&#x76F8;&#x540C;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x6267;&#x884C;&#x901F;&#x7387;&#x4F1A;&#x5F88;&#x5FEB;&#x3002;</p>
+<p>&#x4E86;&#x89E3;&#x4E86;&#x51FD;&#x6570;&#x6D3E;&#x53D1;&#x7684;&#x57FA;&#x672C;&#x77E5;&#x8BC6;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B; Swift &#x5982;&#x4F55;&#x5904;&#x7406;&#x51FD;&#x6570;&#x6D3E;&#x53D1;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x8BC1;&#x660E;&#x8BE5;&#x79CD;&#x6D3E;&#x53D1;&#x3002;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E00;&#x5F20;&#x603B;&#x7ED3;&#x8868;:</p>
+<p><img src="https://sylarimage.oss-cn-shenzhen.aliyuncs.com/uPic/table_fbcuhz.png" style="zoom:50%;"></p>
+<p>&#x4ECE;&#x4E0A;&#x8868;&#x4E2D;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x89C2;&#x7684;&#x603B;&#x7ED3;&#x51FA;&#xFF1A;<strong>&#x51FD;&#x6570;&#x7684;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#x548C;&#x4EE5;&#x4E0B;&#x4E24;&#x70B9;&#x76F8;&#x5173;&#x8054;:</strong></p>
+<ol>
+<li>&#x5BF9;&#x8C61;&#x7C7B;&#x578B;; &#x503C;&#x7C7B;&#x578B;&#x603B;&#x662F;&#x4F7F;&#x7528;&#x76F4;&#x63A5;&#x6D3E;&#x53D1; (&#x9759;&#x6001;&#x6D3E;&#x53D1;&#xFF0C;&#x56E0;&#x4E3A;&#x4ED6;&#x4EEC;&#x6CA1;&#x6709;&#x7EE7;&#x627F;&#x4F53;&#x7CFB;)</li>
+<li>&#x51FD;&#x6570;&#x58F0;&#x660E;&#x7684;&#x4F4D;&#x7F6E;; &#x76F4;&#x63A5;&#x5728;&#x5B9A;&#x4E49;&#x4E2D;&#x58F0;&#x660E;&#x548C;&#x5728;&#x6269;&#x5C55;&#x4E2D; (extension) &#x58F0;&#x660E;</li>
+</ol>
+<p>&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;<strong>&#x663E;&#x5F0F;&#x7684;&#x6307;&#x5B9A;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;</strong>&#x4E5F;&#x4F1A;&#x6539;&#x53D8;&#x51FD;&#x6570;&#x5176;&#x539F;&#x6709;&#x7684;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;&#x6DFB;&#x52A0; <strong>final &#x6216;&#x8005; @objc &#x5173;&#x952E;&#x5B57;&#x7B49;&#x7B49;</strong>&#xFF1B;&#x4EE5;&#x53CA;<strong>&#x7F16;&#x8BD1;&#x5668;&#x5BF9;&#x7279;&#x5B9A;&#x51FD;&#x6570;&#x7684;&#x4F18;&#x5316;</strong>&#xFF0C;&#x4F8B;&#x5982;&#x5C06;&#x4ECE;&#x672A;&#x88AB;&#x91CD;&#x5199;&#x7684;&#x79C1;&#x6709;&#x51FD;&#x6570;&#x4F18;&#x5316;&#x6210;&#x9759;&#x6001;&#x6D3E;&#x53D1;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C31;&#x8FD9;&#x56DB;&#x4E2A;&#x65B9;&#x9762;&#x6765;&#x5206;&#x6790;&#x548C;&#x63A2;&#x8BA8; Swift &#x7684;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#xFF0C;&#x4EE5;&#x53CA;&#x8BC1;&#x660E;&#x5176;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#x3002;</p>
+<h2 id="&#x5BF9;&#x8C61;&#x7C7B;&#x578B;">&#x5BF9;&#x8C61;&#x7C7B;&#x578B;</h2>
+<p>&#x5982;&#x4E0A;&#x6587;&#x6240;&#x8FF0;&#xFF0C;&#x503C;&#x7C7B;&#x578B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; struct &#x7684;&#x5BF9;&#x8C61;&#x603B;&#x662F;&#x4F7F;&#x7528;&#x9759;&#x6001;&#x6D3E;&#x53D1;; class &#x5BF9;&#x8C61;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x8868;&#x6D3E;&#x53D1; (&#x975E; extension)&#x3002;&#x8BF7;&#x770B;&#x5982;&#x4E0B;&#x793A;&#x4F8B;:</p>
+<pre><code>class MyClass {
+    func testOfClass() {}
+}
+
+struct myStruct {
+    func testOfStruct() {}
+}
+</code></pre><p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x5C06; swift &#x4EE3;&#x7801;&#x8F6C;&#x6362;&#x4E3A; SIL(&#x4E2D;&#x95F4;&#x7801;) &#x4EE5;&#x4FBF;&#x67E5;&#x770B;&#x5176;&#x51FD;&#x6570;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;:</p>
+<pre><code>swiftc -emit-silgen -O test.swift
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;:&#x3001;</p>
+<pre><code>...
+sil_vtable MyClass {
+  #MyClass.testOfClass!1: (MyClass) -&gt; () -&gt; () : @$s4test7MyClassC0a2OfC0yyF    // MyClass.testOfClass()
+  #MyClass.init!allocator.1: (MyClass.Type) -&gt; () -&gt; MyClass : @$s4test7MyClassCACycfC    // MyClass.__allocating_init()
+  #MyClass.deinit!deallocator.1: @$s4test7MyClassCfD    // MyClass.__deallocating_deinit
+}
+</code></pre><p>&#x9996;&#x5148; swift &#x4F1A;&#x4E3A; class &#x6DFB;&#x52A0; <strong>init</strong> &#x548C; <strong>@objc deinit</strong> &#x65B9;&#x6CD5;&#xFF0C;&#x4E3A; struct &#x6DFB;&#x52A0; <strong>init</strong> &#x65B9;&#x6CD5;&#x3002;&#x5728;&#x6587;&#x4EF6;&#x7684;&#x7ED3;&#x5C3E;&#x5904;&#x5C31;&#x4F1A;&#x663E;&#x793A;&#x5982;&#x4E0A;&#x4EE3;&#x7801;&#xFF0C;&#x5B83;&#x5C55;&#x793A;&#x4E86;&#x54EA;&#x4E9B;&#x51FD;&#x6570;&#x662F;&#x51FD;&#x6570;&#x8868;&#x6D3E;&#x53D1;&#x7684;&#xFF0C;&#x4EE5;&#x53CA;&#x5B83;&#x4EEC;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#x3002;&#x7531;&#x4E8E; struct &#x7C7B;&#x578B;&#x4EC5;&#x4F7F;&#x7528;&#x9759;&#x6001;&#x6D3E;&#x53D1;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x4F1A;&#x663E;&#x793A; sil_vtable &#x5B57;&#x6837;&#x3002;</p>
+<h2 id="&#x51FD;&#x6570;&#x58F0;&#x660E;&#x4F4D;&#x7F6E;">&#x51FD;&#x6570;&#x58F0;&#x660E;&#x4F4D;&#x7F6E;</h2>
+<p>&#x51FD;&#x6570;&#x58F0;&#x660E;&#x4F4D;&#x7F6E;&#x7684;&#x4E0D;&#x540C;&#x4E5F;&#x4F1A;&#x5BFC;&#x81F4;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#x7684;&#x4E0D;&#x540C;&#x3002;&#x5728; Swift &#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5E38;&#x5E38;&#x5728; extension &#x91CC;&#x9762;&#x6DFB;&#x52A0;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#x3002;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x603B;&#x7ED3;&#x7684;&#x8868;&#x683C;&#xFF0C;&#x901A;&#x5E38; extension &#x4E2D;&#x58F0;&#x660E;&#x7684;&#x51FD;&#x6570;&#x90FD;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x9759;&#x6001;&#x6D3E;&#x53D1;&#x3002;</p>
+<pre><code>protocol MyProtocol {
+    func testOfProtocol()
+}
+
+extension MyProtocol {
+    func testOfProtocolInExtension() {}
+}
+
+class MyClass: MyProtocol {
+    func testOfClass() {}
+    func testOfProtocol() {}
+}
+
+extension MyClass {
+    func testOfClassInExtension() {}
+}
+</code></pre><p>&#x6211;&#x4EEC;&#x5206;&#x522B;&#x5728; <strong>protocol</strong> &#x548C; <strong>class</strong> &#x4E2D;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x518D;&#x5728;&#x5176; extension &#x4E2D;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x51FD;&#x6570;; &#x6700;&#x540E;&#x8BA9;&#x7C7B;&#x5B9E;&#x73B0;&#x534F;&#x8BAE;&#x7684;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x8F6C;&#x6362;&#x6210; SIL &#x4EE3;&#x7801;&#x540E;&#x5982;&#x4E0B;:</p>
+<pre><code>...
+sil_vtable MyClass {
+  #MyClass.testOfClass!1: (MyClass) -&gt; () -&gt; () : @$s4test7MyClassC0a2OfC0yyF    // MyClass.testOfClass()
+  #MyClass.testOfProtocol!1: (MyClass) -&gt; () -&gt; () : @$s4test7MyClassC0A10OfProtocolyyF    // MyClass.testOfProtocol()
+  #MyClass.init!allocator.1: (MyClass.Type) -&gt; () -&gt; MyClass : @$s4test7MyClassCACycfC    // MyClass.__allocating_init()
+  #MyClass.deinit!deallocator.1: @$s4test7MyClassCfD    // MyClass.__deallocating_deinit
+}
+
+sil_witness_table hidden MyClass: MyProtocol module test {
+  method #MyProtocol.testOfProtocol!1: &lt;Self where Self : MyProtocol&gt; (Self) -&gt; () -&gt; () : @$s4test7MyClassCAA0B8ProtocolA2aDP0a2OfD0yyFTW    // protocol witness for MyProtocol.testOfProtocol() in conformance MyClass
+}
+</code></pre><p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F88;&#x76F4;&#x89C2;&#x7684;&#x770B;&#x5230;&#xFF0C;&#x58F0;&#x660E;&#x5728;&#x534F;&#x8BAE;&#x6216;&#x8005;&#x7C7B;&#x4E3B;&#x4F53;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x662F;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x8868;&#x6D3E;&#x53D1;&#x7684;; &#x800C;&#x58F0;&#x660E;&#x5728;&#x6269;&#x5C55;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x5219;&#x662F;&#x9759;&#x6001;&#x6D3E;&#x53D1;&#x3002;</p>
+<p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;: &#x5F53;&#x6211;&#x4EEC;&#x5728; protocol &#x4E2D;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x5728; protocol &#x7684; extension &#x4E2D;&#x5B9E;&#x73B0;&#x4E86;&#x5B83;&#xFF0C;&#x800C;&#x4E14;&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x91CD;&#x5199;&#x8BE5;&#x51FD;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x76F4;&#x63A5;&#x6D3E;&#x53D1;&#xFF0C;&#x7B97;&#x662F;&#x901A;&#x7528;&#x51FD;&#x6570;&#x3002;</p>
+<h2 id="&#x6307;&#x5B9A;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;">&#x6307;&#x5B9A;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;</h2>
+<p>&#x7ED9;&#x51FD;&#x6570;&#x6DFB;&#x52A0;&#x5173;&#x952E;&#x5B57;&#x7684;&#x4FEE;&#x9970;&#x4E5F;&#x80FD;&#x6539;&#x53D8;&#x5176;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#x3002;</p>
+<h3 id="final">final</h3>
+<p>&#x6DFB;&#x52A0;&#x4E86; final &#x5173;&#x952E;&#x5B57;&#x7684;&#x51FD;&#x6570;&#x65E0;&#x6CD5;&#x88AB;&#x91CD;&#x5199;&#xFF0C;&#x4F7F;&#x7528;&#x76F4;&#x63A5;&#x6D3E;&#x53D1;&#xFF0C;&#x4E0D;&#x4F1A;&#x5728; vtable &#x4E2D;&#x51FA;&#x73B0;&#x3002;&#x5E76;&#x4E14;&#x5BF9; Objc runtime &#x4E0D;&#x53EF;&#x89C1;&#x3002;</p>
+<h3 id="dynamic">dynamic</h3>
+<p>&#x503C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x51FD;&#x6570;&#x5747;&#x53EF;&#x6DFB;&#x52A0; dynamic &#x5173;&#x952E;&#x5B57;&#x3002;&#x5728; Swift5 &#x4E2D;&#xFF0C;&#x7ED9;&#x51FD;&#x6570;&#x6DFB;&#x52A0; <strong>dynamic</strong> &#x7684;&#x4F5C;&#x7528;&#x662F;&#x4E3A;&#x4E86;&#x8D4B;&#x4E88;&#x975E; objc &#x7C7B;&#x548C;&#x503C;&#x7C7B;&#x578B; (struct &#x548C; enum) &#x52A8;&#x6001;&#x6027;&#x3002;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x5982;&#x4E0B;&#x4EE3;&#x7801;:</p>
+<pre><code>struct Test {
+    dynamic func test() {}
+}
+</code></pre><p>&#x6211;&#x4EEC;&#x8D4B;&#x4E88;&#x4E86; test &#x51FD;&#x6570;&#x52A8;&#x6001;&#x6027;&#x3002;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x6210; SIL &#x4E2D;&#x95F4;&#x7801;&#x540E;&#x5982;&#x4E0B;:</p>
+<pre><code>// Test.test()
+sil hidden [dynamically_replacable] @$s4test4TestVAAyyF : $@convention(method) (Test) -&gt; () {
+// %0                                             // user: %1
+bb0(%0 : @trivial $Test):
+  debug_value %0 : $Test, let, name &quot;self&quot;, argno 1 // id: %1
+  %2 = tuple ()                                   // user: %3
+  return %2 : $()                                 // id: %3
+} // end sil function &apos;$s4test4TestVAAyyF&apos;
+</code></pre><p>&#x6211;&#x4EEC;&#x5728;&#x7B2C;&#x4E8C;&#x884C;&#x53EF;&#x4EE5;&#x770B;&#x5230; <strong>test</strong> &#x51FD;&#x6570;&#x591A;&#x4E86;&#x4E00;&#x4E2A; &#x201C;&#x5C5E;&#x6027;&#x201D;: <strong>dynamically_replacable</strong>, &#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x6DFB;&#x52A0; dynamic &#x5173;&#x952E;&#x5B57;&#x5C31;&#x662F;&#x8D4B;&#x4E88;&#x51FD;&#x6570;<strong>&#x52A8;&#x6001;&#x66FF;&#x6362;</strong>&#x7684;&#x80FD;&#x529B;&#x3002;&#x90A3;&#x4EC0;&#x4E48;&#x662F;&#x52A8;&#x6001;&#x66FF;&#x6362;&#x5462;? &#x7B80;&#x800C;&#x8A00;&#x4E4B;&#x5C31;&#x662F;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x9014;&#x5F84;&#xFF0C;&#x6BD4;&#x65B9;&#x8BF4;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06; Module A &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5728; Module B &#x4E2D;&#x52A8;&#x6001;&#x66FF;&#x6362;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;:</p>
+<pre><code>// Module A
+struct Foo {
+ dynamic func bar() {}
+}
+</code></pre><pre><code>// Module B
+extension Foo {
+  @_dynamicReplacement(for: bar()0
+  func barReplacement() {
+    ...
+    // Calls previously active implementation of bar()
+    bar()
+  }
+</code></pre><p>&#x6DFB;&#x52A0; dynamic &#x5173;&#x952E;&#x5B57;&#x5E76;&#x4E0D;&#x4EE3;&#x8868;&#x5BF9; Objc &#x53EF;&#x89C1;&#x3002;</p>
+<h3 id="objc">@objc</h3>
+<p>&#x8BE5;&#x5173;&#x952E;&#x5B57;&#x53EF;&#x4EE5;&#x5C06; Swift &#x51FD;&#x6570;&#x66B4;&#x9732;&#x7ED9; Objc &#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x5176;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#xFF0C;&#x4F9D;&#x65E7;&#x662F;&#x51FD;&#x6570;&#x8868;&#x6D3E;&#x53D1;&#x3002;&#x4E3E;&#x4F8B;&#x5982;&#x4E0B;:</p>
+<pre><code>class Test {
+    @objc func test() {}
+}
+</code></pre><p>SIL &#x4EE3;&#x7801;&#x5982;&#x4E0B;:</p>
+<pre><code>...
+
+// @objc Test.test()
+sil hidden [thunk] @$s4test4TestCAAyyFTo : $@convention(objc_method) (Test) -&gt; () {
+// %0                                             // user: %1
+bb0(%0 : @unowned $Test):
+  %1 = copy_value %0 : $Test                      // users: %6, %2
+  %2 = begin_borrow %1 : $Test                    // users: %5, %4
+  // function_ref Test.test()
+  %3 = function_ref @$s4test4TestCAAyyF : $@convention(method) (@guaranteed Test) -&gt; () // user: %4
+  %4 = apply %3(%2) : $@convention(method) (@guaranteed Test) -&gt; () // user: %7
+  end_borrow %2 : $Test                           // id: %5
+  destroy_value %1 : $Test                        // id: %6
+  return %4 : $()                                 // id: %7
+} // end sil function &apos;$s4test4TestCAAyyFTo&apos;
+
+...
+
+sil_vtable Test {
+  #Test.test!1: (Test) -&gt; () -&gt; () : @$s4test4TestCAAyyF    // Test.test()
+  #Test.init!allocator.1: (Test.Type) -&gt; () -&gt; Test : @$s4test4TestCACycfC    // Test.__allocating_init()
+  #Test.deinit!deallocator.1: @$s4test4TestCfD    // Test.__deallocating_deinit
+}
+</code></pre><p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230; test &#x65B9;&#x6CD5;&#x4F9D;&#x65E7;&#x5728; &#x201C;&#x865A;&#x51FD;&#x6570;&#x5217;&#x8868;&#x201D; &#x4E2D;&#xFF0C;&#x8BC1;&#x660E;&#x5176;&#x5B9E;&#x51FD;&#x6570;&#x8868;&#x6D3E;&#x53D1;&#x3002;&#x5982;&#x679C;&#x5E0C;&#x671B; test &#x51FD;&#x6570;&#x4F7F;&#x7528;&#x6D88;&#x606F;&#x6D3E;&#x53D1;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x989D;&#x5916;&#x6DFB;&#x52A0; <strong>dynamic</strong> &#x5173;&#x952E;&#x5B57;&#x3002;</p>
+<h3 id="inline-or-static">@inline or static</h3>
+<p>@inline &#x5173;&#x952E;&#x5B57;&#x987E;&#x540D;&#x601D;&#x4E49;&#x662F;&#x60F3;&#x544A;&#x8BC9;&#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x6B64;&#x51FD;&#x6570;&#x76F4;&#x63A5;&#x6D3E;&#x53D1;&#xFF0C;&#x4F46;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x6210; SIL &#x4EE3;&#x7801;&#x540E;&#xFF0C;&#x4F9D;&#x65E7;&#x662F; vtable &#x6D3E;&#x53D1;&#x3002;Static &#x5173;&#x952E;&#x5B57;&#x4F1A;&#x5C06;&#x51FD;&#x6570;&#x53D8;&#x4E3A;&#x76F4;&#x63A5;&#x6D3E;&#x53D1;&#x3002;</p>
+<h2 id="&#x7F16;&#x8BD1;&#x5668;&#x4F18;&#x5316;">&#x7F16;&#x8BD1;&#x5668;&#x4F18;&#x5316;</h2>
+<p>Swift &#x4F1A;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x53BB;&#x4F18;&#x5316;&#x51FD;&#x6570;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#x3002;&#x6211;&#x4EEC;&#x4E0A;&#x6587;&#x63D0;&#x5230;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x7C7B;&#x58F0;&#x660E;&#x4E86;&#x4E00;&#x4E2A;&#x79C1;&#x6709;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x88AB;&#x4F18;&#x5316;&#x4E3A;&#x76F4;&#x63A5;&#x6D3E;&#x53D1;&#x3002;&#x8FD9;&#x4E5F;&#x5C31;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5F53;&#x6211;&#x4EEC;&#x5728; Swift &#x4E2D;&#x4F7F;&#x7528; <strong>target-action</strong> &#x6A21;&#x5F0F;&#x65F6;&#xFF0C;&#x79C1;&#x6709; selector &#x4F1A;&#x62A5;&#x9519;&#x7684;&#x539F;&#x56E0; (<em>Objective-C &#x65E0;&#x6CD5;&#x83B7;&#x53D6; #selector &#x6307;&#x5B9A;&#x7684;&#x51FD;&#x6570;</em>)&#x3002;</p>
+<h2 id="&#x6D3E;&#x53D1;&#x603B;&#x7ED3;">&#x6D3E;&#x53D1;&#x603B;&#x7ED3;</h2>
+<p>&#x6700;&#x540E;&#x6211;&#x4EEC;&#x7528;&#x4E00;&#x5F20;&#x56FE;&#x603B;&#x7ED3;&#x4E0B; Swift &#x4E2D;&#x7684;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;:</p>
+<p><img src="https://sylarimage.oss-cn-shenzhen.aliyuncs.com/uPic/summary_c0azo8.png" style="zoom:50%;"></p>
+<p>&#x4ECE;&#x4E0A;&#x8868;&#x53EF;&#x89C1;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7C7B;&#x578B;&#x7684;&#x4E3B;&#x4F53;&#x4E2D;&#x58F0;&#x660E;&#x7684;&#x51FD;&#x6570;&#x5927;&#x90FD;&#x662F;&#x51FD;&#x6570;&#x8868;&#x6D3E;&#x53D1;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F; Swift &#x4E2D;&#x6700;&#x4E3A;&#x5E38;&#x89C1;&#x7684;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#xFF1B;&#x800C;&#x6269;&#x5C55;&#x5927;&#x90FD;&#x662F;&#x76F4;&#x63A5;&#x6D3E;&#x53D1;&#xFF1B;&#x53EA;&#x6709;&#x518D;&#x6DFB;&#x52A0;&#x4E86;&#x7279;&#x5B9A;&#x5173;&#x952E;&#x5B57;&#x540E;&#xFF0C;&#x5982; <strong>@objc, final, dynamic</strong> &#x540E;&#xFF0C;&#x51FD;&#x6570;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#x624D;&#x4F1A;&#x6709;&#x6240;&#x6539;&#x53D8;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x80FD;&#x5C06;&#x67D0;&#x4E9B;&#x65B9;&#x6CD5;&#x4F18;&#x5316;&#x4E3A;&#x76F4;&#x63A5;&#x6D3E;&#x53D1;&#x3002;&#x4F8B;&#x5982;&#x79C1;&#x6709;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x8BB2;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#x51FD;&#x6570;&#x6D3E;&#x53D1;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x90A3;&#x5BF9;&#x6211;&#x4EEC;&#x6709;&#x4EC0;&#x4E48;&#x7528;&#x5462;&#xFF1F;&#x6216;&#x8005;&#x8BF4;&#x5982;&#x4F55;&#x9009;&#x62E9;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#x5462;&#xFF1F;</p>
+<p>&#x6211;&#x603B;&#x7ED3;&#x4E86;&#x4E24;&#x70B9;:</p>
+<ol>
+<li>&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x7406;&#x89E3;&#x4E00;&#x4E9B; &#x201C;&#x5947;&#x602A;&#x7684;&#x201D; &#x884C;&#x4E3A;&#xFF0C;&#x4F8B;&#x5982;&#x4E3A;&#x4F55; extension &#x4E2D;&#x7684;&#x51FD;&#x6570;&#x65E0;&#x6CD5;&#x88AB;&#x5B50;&#x7C7B;&#x7EE7;&#x627F;&#xFF0C;&#x4E3A;&#x4F55;&#x9700;&#x8981;&#x6DFB;&#x52A0; @objc &#x751A;&#x81F3;&#x662F; dynamic &#x540E;&#x624D;&#x80FD;&#x88AB;&#x91CD;&#x5199;&#x3002;</li>
+<li>&#x63D0;&#x4F9B;&#x9009;&#x62E9;&#x7C7B;&#x578B;&#x7684;&#x6761;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;&#x60A8;&#x7684; app &#x5BF9;&#x6027;&#x80FD;&#x8981;&#x6C42;&#x5F88;&#x82DB;&#x523B;&#xFF0C;&#x90A3;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x503C;&#x7C7B;&#x578B;&#xFF1B;&#x5E76;&#x4E14;&#x5BF9;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x5173;&#x952E;&#x5B57;&#x63CF;&#x8FF0;&#x3002;</li>
+</ol>
+<p>&#x603B;&#x7684;&#x6765;&#x8BF4;&#xFF0C;&#x5982;&#x4F55;&#x9009;&#x62E9;&#x8FD8;&#x662F;&#x53D6;&#x51B3;&#x4E8E;&#x4E1A;&#x52A1;&#x7C7B;&#x578B;&#x3002;&#x9996;&#x5148;&#x8981;&#x786E;&#x5B9A;&#x4F7F;&#x7528;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x8FD8;&#x662F;&#x503C;&#x7C7B;&#x578B;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x4E5F;&#x90E8;&#x5206;&#x51B3;&#x5B9A;&#x4E86;&#x51FD;&#x6570;&#x7684;&#x6D3E;&#x53D1;&#x65B9;&#x5F0F;&#xFF1B;&#x4E4B;&#x540E;&#x786E;&#x5B9A;&#x662F;&#x5426;&#x7ED9;&#x51FD;&#x6570;&#x6DFB;&#x52A0;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x4F8B;&#x5982; <strong>@objc&#xFF0C;final &#x6216; dynamic</strong>&#xFF0C;&#x4EE5;&#x8FBE;&#x5230;&#x51C6;&#x786E;&#x63CF;&#x8FF0;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="optional.html" class="navigation navigation-prev " aria-label="Previous page: Optional实现原理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../iOS/ReadME.html" class="navigation navigation-next " aria-label="Next page: iOS Dev">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Swift函数派发机制","level":"1.2.3","depth":2,"next":{"title":"iOS Dev","level":"1.3","depth":1,"path":"iOS/ReadME.md","ref":"./iOS/ReadME.md","articles":[{"title":"TableHeaderView AutoLayout","level":"1.3.1","depth":2,"path":"iOS/TableViewHeaderViewAutoHeight.md","ref":"./iOS/TableViewHeaderViewAutoHeight.md","articles":[]},{"title":"iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测)","level":"1.3.2","depth":2,"path":"iOS/iOS14CellHierarchy.md","ref":"./iOS/iOS14CellHierarchy.md","articles":[]},{"title":"TextView/TextField 输入限制","level":"1.3.3","depth":2,"path":"iOS/TextFieldByteLimit.md","ref":"iOS/TextFieldByteLimit.md","articles":[]},{"title":"卸载 Cocoapods","level":"1.3.4","depth":2,"path":"iOS/UninstallCocoapods.md","ref":"iOS/UninstallCocoapods.md","articles":[]}]},"previous":{"title":"Optional实现原理","level":"1.2.2","depth":2,"path":"Swift/optional.md","ref":"./Swift/optional.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"}},"file":{"path":"Swift/swiftmethoddispatch.md","mtime":"2025-02-16T15:09:26.033Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-02-16T15:09:52.100Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
