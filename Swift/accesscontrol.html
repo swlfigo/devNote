@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Swift vs OC · GitBook</title>
+        <title>Swift Access Control · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="optional.html" />
+    <link rel="next" href="swiftmethoddispatch.html" />
     
     
-    <link rel="prev" href="ReadME.html" />
+    <link rel="prev" href="optional.html" />
     
 
     </head>
@@ -116,7 +116,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="swiftvsoc.html">
+        <li class="chapter " data-level="1.2.1" data-path="swiftvsoc.html">
             
                 <a href="swiftvsoc.html">
             
@@ -142,7 +142,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="accesscontrol.html">
+        <li class="chapter active" data-level="1.2.3" data-path="accesscontrol.html">
             
                 <a href="accesscontrol.html">
             
@@ -481,7 +481,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Swift vs OC</a>
+        <a href=".." >Swift Access Control</a>
     </h1>
 </div>
 
@@ -496,24 +496,36 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="swift-&#x4E0E;-oc-&#x5DEE;&#x5F02;">Swift &#x4E0E; OC &#x5DEE;&#x5F02;</h1>
-<h2 id="1-&#x5728;swift&#x4E2D;class&#x548C;struct&#x7684;&#x5171;&#x540C;&#x70B9;&#x548C;&#x533A;&#x522B;&#xFF1F;">1. &#x5728;Swift&#x4E2D;class&#x548C;struct&#x7684;&#x5171;&#x540C;&#x70B9;&#x548C;&#x533A;&#x522B;&#xFF1F;</h2>
-<p>Class &#x548C; Struct &#x662F; Swift &#x4E2D;&#x4E24;&#x79CD;&#x57FA;&#x672C;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x6709;&#x4E00;&#x4E9B;&#x5171;&#x540C;&#x70B9;&#x548C;&#x533A;&#x522B;&#x3002;</p>
-<p>&#x5171;&#x540C;&#x70B9;:</p>
-<ol>
-<li>&#x90FD;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x5C5E;&#x6027; (properties) &#x548C;&#x65B9;&#x6CD5; (methods)&#x3002;</li>
-<li>&#x90FD;&#x53EF;&#x4EE5;&#x9075;&#x5FAA;&#x534F;&#x8BAE; (protocols)&#x3002;</li>
-<li>&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x8F6C;&#x6362; (type casting)&#x3002;</li>
-<li>&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6269;&#x5C55; (extensions) &#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x529F;&#x80FD;&#x3002;
-&#x533A;&#x522B;&#xFF1A;</li>
-<li>&#x4E0D;&#x540C;&#x7684;&#x521B;&#x5EFA;&#x65B9;&#x5F0F;: &#x7ED3;&#x6784;&#x4F53;&#x662F;&#x7531; struct &#x5173;&#x952E;&#x5B57;&#x521B;&#x5EFA;&#xFF0C;&#x7C7B;&#x662F;&#x7531; class &#x5173;&#x952E;&#x5B57;&#x521B;&#x5EFA;&#x3002;</li>
-<li>&#x503C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;: &#x7ED3;&#x6784;&#x4F53;&#x662F;&#x503C;&#x7C7B;&#x578B;&#xFF0C;&#x7C7B;&#x662F;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x3002;&#x7ED3;&#x6784;&#x4F53;&#x5728;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#x548C;&#x4F20;&#x9012;&#x65F6;&#x4F1A;&#x8FDB;&#x884C;&#x503C;&#x62F7;&#x8D1D;&#xFF0C;&#x7C7B;&#x4F1A;&#x8FDB;&#x884C;&#x5F15;&#x7528;&#x4F20;&#x9012;&#x3002;</li>
-<li>&#x7EE7;&#x627F;: &#x7C7B;&#x652F;&#x6301;&#x7EE7;&#x627F;&#xFF0C;&#x7ED3;&#x6784;&#x4F53;&#x4E0D;&#x652F;&#x6301;&#x3002;</li>
-<li>deinit: &#x7C7B;&#x6709; deinit &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x6E05;&#x7406;&#x64CD;&#x4F5C;,&#x7ED3;&#x6784;&#x4F53;&#x6CA1;&#x6709;</li>
-<li>&#x901A;&#x8FC7;mutating&#x5173;&#x952E;&#x5B57;&#x6765;&#x4FEE;&#x6539;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x800C;&#x7C7B;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x3002;</li>
-<li>&#x6839;&#x636E;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x6765;&#x51B3;&#x5B9A;&#x662F;&#x4F7F;&#x7528;&#x7C7B;&#x8FD8;&#x662F;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x7EE7;&#x627F;&#x6216;&#x8005;&#x5728;&#x8D4B;&#x503C;&#x6216;&#x4F20;&#x9012;&#x65F6;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5F15;&#x7528;&#x4F20;&#x9012;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x7C7B;&#xFF1B;&#x5982;&#x679C;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5E76;&#x4E14;&#x9700;&#x8981;&#x5728;&#x8D4B;&#x503C;&#x6216;&#x4F20;&#x9012;&#x65F6;&#x8FDB;&#x884C;&#x503C;&#x62F7;&#x8D1D;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x4F53;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;,&#x7ED3;&#x6784;&#x4F53;&#x548C;&#x7C7B;&#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x534F;&#x8BAE;&#x548C;&#x6269;&#x5C55;,&#x534F;&#x8BAE;&#x7EE7;&#x627F;&#x4EE5;&#x53CA;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x6765;&#x6269;&#x5C55;&#x529F;&#x80FD;&#x7684;,&#x800C;&#x4E0D;&#x4EC5;&#x4EC5;&#x9650;&#x4E8E;&#x7C7B;.</li>
-</ol>
-<p>&#x9009;&#x62E9;&#x7ED3;&#x6784;&#x4F53;&#x8FD8;&#x662F;&#x7C7B;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x9700;&#x6C42;&#x548C;&#x9884;&#x671F;&#x884C;&#x4E3A;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x9700;&#x8981;&#x7EE7;&#x627F;&#x6216;&#x8005;&#x5728;&#x8D4B;&#x503C;&#x548C;&#x4F20;&#x9012;&#x65F6;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x503C;&#x62F7;&#x8D1D;&#xFF0C;&#x5219;&#x9009;&#x62E9;&#x7ED3;&#x6784;&#x4F53;&#xFF1B;&#x5982;&#x679C;&#x9700;&#x8981;&#x7EE7;&#x627F;&#x6216;&#x8005;&#x5728;&#x8D4B;&#x503C;&#x548C;&#x4F20;&#x9012;&#x65F6;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5F15;&#x7528;&#x4F20;&#x9012;&#xFF0C;&#x5219;&#x9009;&#x62E9;&#x7C7B;&#x3002;</p>
+                                <h1 id="access-control">Access Control</h1>
+<h1 id="private">Private</h1>
+<p> private&#x6240;&#x4FEE;&#x9970;&#x7684;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x5F53;&#x524D;&#x7C7B;&#x91CC;&#x8BBF;&#x95EE;</p>
+<p> private&#x6240;&#x4FEE;&#x9970;&#x7C7B;&#x53EA;&#x80FD;&#x5728;&#x5F53;&#x524D;.swift&#x6587;&#x4EF6;&#x91CC;&#x8BBF;&#x95EE;</p>
+<h1 id="fileprivate">fileprivate</h1>
+<p>fileprivate&#x8BBF;&#x95EE;&#x7EA7;&#x522B;&#x6240;&#x4FEE;&#x9970;&#x7684;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x65B9;&#x6CD5;&#x5728;&#x5F53;&#x524D;&#x7684;Swift&#x6E90;&#x6587;&#x4EF6;&#x91CC;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x3002;</p>
+<h1 id="internal&#xFF08;&#x9ED8;&#x8BA4;&#x8BBF;&#x95EE;&#x7EA7;&#x522B;&#xFF0C;internal&#x4FEE;&#x9970;&#x7B26;&#x53EF;&#x5199;&#x53EF;&#x4E0D;&#x5199;&#xFF09;">internal&#xFF08;&#x9ED8;&#x8BA4;&#x8BBF;&#x95EE;&#x7EA7;&#x522B;&#xFF0C;internal&#x4FEE;&#x9970;&#x7B26;&#x53EF;&#x5199;&#x53EF;&#x4E0D;&#x5199;&#xFF09;</h1>
+<p>internal&#x8BBF;&#x95EE;&#x7EA7;&#x522B;&#x6240;&#x4FEE;&#x9970;&#x7684;&#x5C5E;&#x6027;&#x6216;&#x65B9;&#x6CD5;&#x5728;&#x6E90;&#x4EE3;&#x7801;&#x6240;&#x5728;&#x7684;&#x6574;&#x4E2A;&#x6A21;&#x5757;&#x90FD;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x3001;&#x88AB;&#x7EE7;&#x627F;&#x3001;&#x88AB;&#x91CD;&#x5199;</p>
+<p>&#x5982;&#x679C;&#x662F;&#x6846;&#x67B6;&#x6216;&#x8005;&#x5E93;&#x4EE3;&#x7801;&#xFF0C;&#x5219;&#x5728;&#x6574;&#x4E2A;&#x6846;&#x67B6;&#x5185;&#x90E8;&#x90FD;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#xFF0C;&#x6846;&#x67B6;&#x7531;&#x5916;&#x90E8;&#x4EE3;&#x7801;&#x6240;&#x5F15;&#x7528;&#x65F6;&#xFF0C;&#x5219;&#x4E0D;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x3002;&#x5373;&#x4F7F;&#x4F7F;&#x7528;import&#xFF0C;&#x4E5F;&#x4F1A;&#x63D0;&#x793A;&#x9519;&#x8BEF;&#xFF1A;</p>
+<blockquote>
+<p>No such module &apos;...&apos;</p>
+</blockquote>
+<p>&#x5982;&#x679C;&#x662F;App&#x4EE3;&#x7801;&#xFF0C;&#x4E5F;&#x662F;&#x5728;&#x6574;&#x4E2A;App&#x4EE3;&#x7801;&#xFF0C;&#x4E5F;&#x662F;&#x5728;&#x6574;&#x4E2A;App&#x5185;&#x90E8;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x3002;</p>
+<h1 id="public">public</h1>
+<p>&#x53EF;&#x4EE5;&#x88AB;&#x4EFB;&#x4F55;&#x7C7B;&#x8BBF;&#x95EE;&#x3002;&#x4F46;&#x5176;&#x4ED6;module&#x4E2D;&#x4E0D;&#x53EF;&#x4EE5;&#x88AB;override&#x548C;&#x7EE7;&#x627F;&#xFF0C;&#x800C;&#x5728;module&#x5185;&#x53EF;&#x4EE5;&#x88AB;override&#x548C;&#x7EE7;&#x627F;&#x3002;</p>
+<blockquote>
+<p>Cannot inherit from non-open class &apos;...&apos; outside of its defining module</p>
+</blockquote>
+<h1 id="open">open</h1>
+<p>&#x53EF;&#x4EE5;&#x88AB;&#x4EFB;&#x4F55;&#x7C7B;&#x4F7F;&#x7528;&#xFF0C;&#x5305;&#x62EC;override&#x548C;&#x7EE7;&#x627F;&#x3002;</p>
+<p>&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x6392;&#x5E8F;&#x4ECE;&#x9AD8;&#x5230;&#x4F4E;&#x6392;&#x5E8F;&#xFF1A;open&gt;public&gt;interal &gt; fileprivate &gt;private</p>
+<p>Open &#x548C; Public &#x7EA7;&#x522B;&#x53EF;&#x4EE5;&#x8BA9;&#x5B9E;&#x4F53;&#x88AB;&#x540C;&#x4E00;&#x6A21;&#x5757;&#x6E90;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5B9E;&#x4F53;&#x8BBF;&#x95EE;&#xFF0C;&#x5728;&#x6A21;&#x5757;&#x5916;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5BFC;&#x5165;&#x8BE5;&#x6A21;&#x5757;&#x6765;&#x8BBF;&#x95EE;&#x6E90;&#x6587;&#x4EF6;&#x91CC;&#x7684;&#x6240;&#x6709;&#x5B9E;&#x4F53;&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x4F1A;&#x4F7F;&#x7528; Open &#x6216; Public &#x7EA7;&#x522B;&#x6765;&#x6307;&#x5B9A;&#x6846;&#x67B6;&#x7684;&#x5916;&#x90E8;&#x63A5;&#x53E3;&#x3002;Open &#x548C; Public &#x7684;&#x533A;&#x522B;&#x5728;&#x540E;&#x9762;&#x4F1A;&#x63D0;&#x5230;&#x3002;</p>
+<p>Internal &#x7EA7;&#x522B;&#x8BA9;&#x5B9E;&#x4F53;&#x88AB;&#x540C;&#x4E00;&#x6A21;&#x5757;&#x6E90;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5B9E;&#x4F53;&#x8BBF;&#x95EE;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x88AB;&#x6A21;&#x5757;&#x5916;&#x7684;&#x5B9E;&#x4F53;&#x8BBF;&#x95EE;&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E2A;&#x63A5;&#x53E3;&#x53EA;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6216;&#x6846;&#x67B6;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A; Internal &#x7EA7;&#x522B;&#x3002;</p>
+<p>File-private &#x9650;&#x5236;&#x5B9E;&#x4F53;&#x53EA;&#x80FD;&#x5728;&#x5176;&#x5B9A;&#x4E49;&#x7684;&#x6587;&#x4EF6;&#x5185;&#x90E8;&#x8BBF;&#x95EE;&#x3002;&#x5982;&#x679C;&#x529F;&#x80FD;&#x7684;&#x90E8;&#x5206;&#x7EC6;&#x8282;&#x53EA;&#x9700;&#x8981;&#x5728;&#x6587;&#x4EF6;&#x5185;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; File-private &#x6765;&#x5C06;&#x5176;&#x9690;&#x85CF;&#x3002;</p>
+<p>Private &#x9650;&#x5236;&#x5B9E;&#x4F53;&#x53EA;&#x80FD;&#x5728;&#x5176;&#x5B9A;&#x4E49;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x4EE5;&#x53CA;&#x540C;&#x4E00;&#x6587;&#x4EF6;&#x5185;&#x7684; extension &#x8BBF;&#x95EE;&#x3002;&#x5982;&#x679C;&#x529F;&#x80FD;&#x7684;&#x90E8;&#x5206;&#x7EC6;&#x8282;&#x53EA;&#x9700;&#x8981;&#x5728;&#x5F53;&#x524D;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Private &#x6765;&#x5C06;&#x5176;&#x9690;&#x85CF;&#x3002;
+ Open &#x53EA;&#x80FD;&#x4F5C;&#x7528;&#x4E8E;&#x7C7B;&#x548C;&#x7C7B;&#x7684;&#x6210;&#x5458;&#xFF0C;&#x5B83;&#x548C; Public &#x7684;&#x533A;&#x522B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>Public &#x6216;&#x8005;&#x5176;&#x5B83;&#x66F4;&#x4E25;&#x8BBF;&#x95EE;&#x7EA7;&#x522B;&#x7684;&#x7C7B;&#xFF0C;&#x53EA;&#x80FD;&#x5728;&#x5176;&#x5B9A;&#x4E49;&#x7684;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x88AB;&#x7EE7;&#x627F;&#x3002;</p>
+<p>Public &#x6216;&#x8005;&#x5176;&#x5B83;&#x66F4;&#x4E25;&#x8BBF;&#x95EE;&#x7EA7;&#x522B;&#x7684;&#x7C7B;&#x6210;&#x5458;&#xFF0C;&#x53EA;&#x80FD;&#x5728;&#x5176;&#x5B9A;&#x4E49;&#x7684;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x7684;&#x5B50;&#x7C7B;&#x4E2D;&#x91CD;&#x5199;&#x3002;</p>
+<p>Open &#x7684;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x5B9A;&#x4E49;&#x7684;&#x6A21;&#x5757;&#x4E2D;&#x88AB;&#x7EE7;&#x627F;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x5F15;&#x7528;&#x5B83;&#x7684;&#x6A21;&#x5757;&#x4E2D;&#x88AB;&#x7EE7;&#x627F;&#x3002;</p>
+<p>Open &#x7684;&#x7C7B;&#x6210;&#x5458;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x5B9A;&#x4E49;&#x7684;&#x6A21;&#x5757;&#x4E2D;&#x5B50;&#x7C7B;&#x4E2D;&#x91CD;&#x5199;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x5F15;&#x7528;&#x5B83;&#x7684;&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x5B50;&#x7C7B;&#x91CD;&#x5199;&#x3002;</p>
 
                                 
                                 </section>
@@ -541,12 +553,12 @@
 
             
                 
-                <a href="ReadME.html" class="navigation navigation-prev " aria-label="Previous page: Swift">
+                <a href="optional.html" class="navigation navigation-prev " aria-label="Previous page: Optional实现原理">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="optional.html" class="navigation navigation-next " aria-label="Next page: Optional实现原理">
+                <a href="swiftmethoddispatch.html" class="navigation navigation-next " aria-label="Next page: Swift函数派发机制">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -557,7 +569,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Swift vs OC","level":"1.2.1","depth":2,"next":{"title":"Optional实现原理","level":"1.2.2","depth":2,"path":"Swift/optional.md","ref":"./Swift/optional.md","articles":[]},"previous":{"title":"Swift","level":"1.2","depth":1,"path":"Swift/ReadME.md","ref":"./Swift/ReadME.md","articles":[{"title":"Swift vs OC","level":"1.2.1","depth":2,"path":"Swift/swiftvsoc.md","ref":"./Swift/swiftvsoc.md","articles":[]},{"title":"Optional实现原理","level":"1.2.2","depth":2,"path":"Swift/optional.md","ref":"./Swift/optional.md","articles":[]},{"title":"Swift Access Control","level":"1.2.3","depth":2,"path":"Swift/accesscontrol.md","ref":"./Swift/accesscontrol.md","articles":[]},{"title":"Swift函数派发机制","level":"1.2.4","depth":2,"path":"Swift/swiftmethoddispatch.md","ref":"./Swift/swiftmethoddispatch.md","articles":[]},{"title":"Swift函数派发机制2","level":"1.2.5","depth":2,"path":"Swift/swiftmethoddispatch2.md","ref":"./Swift/swiftmethoddispatch2.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"}},"file":{"path":"Swift/swiftvsoc.md","mtime":"2025-02-17T13:34:46.020Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-02-17T13:35:13.639Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Swift Access Control","level":"1.2.3","depth":2,"next":{"title":"Swift函数派发机制","level":"1.2.4","depth":2,"path":"Swift/swiftmethoddispatch.md","ref":"./Swift/swiftmethoddispatch.md","articles":[]},"previous":{"title":"Optional实现原理","level":"1.2.2","depth":2,"path":"Swift/optional.md","ref":"./Swift/optional.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"}},"file":{"path":"Swift/accesscontrol.md","mtime":"2025-02-17T13:34:46.020Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-02-17T13:35:13.639Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
