@@ -7,7 +7,9 @@
 - [Swift](./Swift/ReadME.md)
   - [Swift vs OC](./Swift/swiftvsoc.md)
   - [Optional实现原理](./Swift/optional.md)
+  - [Swift Access Control](./Swift/accesscontrol.md)
   - [Swift函数派发机制](./Swift/swiftmethoddispatch.md)
+  - [Swift函数派发机制2](./Swift/swiftmethoddispatch2.md)
   
 - [iOS Dev](./iOS/ReadME.md)
   - [TableHeaderView AutoLayout](./iOS/TableViewHeaderViewAutoHeight.md)
