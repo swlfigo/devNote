@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测) · GitBook</title>
+        <title>Xcode Product文件夹消失 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="TextFieldByteLimit.html" />
     
-    
-    <link rel="prev" href="TableViewHeaderViewAutoHeight.html" />
+    <link rel="prev" href="UninstallCocoapods.html" />
     
 
     </head>
@@ -213,7 +211,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="iOS14CellHierarchy.html">
+        <li class="chapter " data-level="1.3.2" data-path="iOS14CellHierarchy.html">
             
                 <a href="iOS14CellHierarchy.html">
             
@@ -252,7 +250,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="XcodeMissingProductFolder.html">
+        <li class="chapter active" data-level="1.3.5" data-path="XcodeMissingProductFolder.html">
             
                 <a href="XcodeMissingProductFolder.html">
             
@@ -494,7 +492,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测)</a>
+        <a href=".." >Xcode Product文件夹消失</a>
     </h1>
 </div>
 
@@ -509,15 +507,16 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="ios14-cell&#x4E0D;&#x89C4;&#x8303;&#x6DFB;&#x52A0;&#x811A;&#x672C;&#x68C0;&#x6D4B;">iOS14 Cell&#x4E0D;&#x89C4;&#x8303;&#x6DFB;&#x52A0;&#x811A;&#x672C;&#x68C0;&#x6D4B;</h1>
-<p>&#x5728; iOS14 bate &#x4E2D;&#xFF0C;UITableViewCell &#x4E2D;&#x5982;&#x679C;&#x6709;&#x76F4;&#x63A5;&#x6DFB;&#x52A0;&#x5728; cell &#x4E0A;&#x7684;&#x63A7;&#x4EF6;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4F7F;&#x7528; <code>[self addSubview:]</code> &#x65B9;&#x5F0F;&#x6DFB;&#x52A0;&#x7684;&#x63A7;&#x4EF6;&#xFF0C;&#x4F1A;&#x663E;&#x793A;&#x5728; contentView &#x7684;&#x4E0B;&#x5C42;&#x3002;
- contentView &#x4F1A;&#x963B;&#x6321;&#x4E8B;&#x4EF6;&#x4EA4;&#x4E92;&#xFF0C;&#x4F7F;&#x6240;&#x6709;&#x4E8B;&#x4EF6;&#x90FD;&#x54CD;&#x5E94; <code>tableView:didSelectRowAtIndexPath:</code> &#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C; customView &#x5B58;&#x5728;&#x4EA4;&#x4E92;&#x4E8B;&#x4EF6;&#x5C06;&#x65E0;&#x6CD5;&#x54CD;&#x5E94;&#x3002;&#x5982;&#x679C; contentView &#x8BBE;&#x7F6E;&#x4E86;&#x80CC;&#x666F;&#x8272;&#xFF0C;&#x8FD8;&#x4F1A;&#x5F71;&#x54CD;&#x754C;&#x9762;&#x663E;&#x793A;&#x3002;</p>
-<pre><code class="lang-shell">//&#x6CE8;: &#x9ED8;&#x8BA4;Cell&#x7684;&#x6587;&#x4EF6;&#x540D;&#x4EE5; xxxCell &#x505A;&#x547D;&#x540D;&#x505A;&#x89C4;&#x8303;
-//&#x5982;&#x679C;&#x9879;&#x76EE;&#x6709;&#x53E6;&#x5916;&#x7279;&#x6B8A;&#x547D;&#x540D;&#x89C4;&#x5219;&#x81EA;&#x884C;&#x4FEE;&#x6539;
-
-
-find (&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;) -name &quot;*Cell.m&quot; -print | xargs grep &quot;self addSubview&quot;
-</code></pre>
+                                <h1 id="xcode-product&#x6587;&#x4EF6;&#x5939;&#x6D88;&#x5931;">XCode Product&#x6587;&#x4EF6;&#x5939;&#x6D88;&#x5931;</h1>
+<ol>
+<li>Right click your <code>xcodeproj</code> file and choose &quot;Show Package Contents&quot;</li>
+<li>Make a copy of the <code>pbxproj</code> file in case something goes wrong</li>
+<li>Open the <code>pbxproj</code> for editing, search for productRefGroup and delete that line.</li>
+<li>Save re-open Xcode project</li>
+<li>Products directory shows back up!</li>
+</ol>
+<h2 id="reference">Reference</h2>
+<p><a href="https://stackoverflow.com/questions/70635415/xcode-13-missing-products-folder-when-creating-a-framework" target="_blank">https://stackoverflow.com/questions/70635415/xcode-13-missing-products-folder-when-creating-a-framework</a></p>
 
                                 
                                 </section>
@@ -545,14 +544,10 @@ find (&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;) -name &quot;*Cell.m&quot; -print
 
             
                 
-                <a href="TableViewHeaderViewAutoHeight.html" class="navigation navigation-prev " aria-label="Previous page: TableHeaderView AutoLayout">
+                <a href="UninstallCocoapods.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 卸载 Cocoapods">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="TextFieldByteLimit.html" class="navigation navigation-next " aria-label="Next page: TextView/TextField 输入限制">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -561,7 +556,7 @@ find (&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;) -name &quot;*Cell.m&quot; -print
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"iOS14CellHierarchy( iOS14 Cell 命名不规范问题检测)","level":"1.3.2","depth":2,"next":{"title":"TextView/TextField 输入限制","level":"1.3.3","depth":2,"path":"iOS/TextFieldByteLimit.md","ref":"iOS/TextFieldByteLimit.md","articles":[]},"previous":{"title":"TableHeaderView AutoLayout","level":"1.3.1","depth":2,"path":"iOS/TableViewHeaderViewAutoHeight.md","ref":"./iOS/TableViewHeaderViewAutoHeight.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"}},"file":{"path":"iOS/iOS14CellHierarchy.md","mtime":"2025-06-15T14:33:24.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-06-15T14:33:51.410Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Xcode Product文件夹消失","level":"1.3.5","depth":2,"next":{"title":"Metal","level":"1.4","depth":1,"ref":"","articles":[{"title":"Metal","level":"1.4.1","depth":2,"path":"Metal/Metal.md","ref":"Metal/Metal.md","articles":[]},{"title":"MTKView","level":"1.4.2","depth":2,"path":"Metal/MTKView.md","ref":"Metal/MTKView.md","articles":[]}]},"previous":{"title":"卸载 Cocoapods","level":"1.3.4","depth":2,"path":"iOS/UninstallCocoapods.md","ref":"iOS/UninstallCocoapods.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"}},"file":{"path":"iOS/XcodeMissingProductFolder.md","mtime":"2025-06-15T14:33:24.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-06-15T14:33:51.410Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
